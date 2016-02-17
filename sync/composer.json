@@ -1,0 +1,13 @@
+{
+    "name": "drupalindex/sync",
+    "description": "Sync Drupal Modules to Algolia",
+    "require": {
+        "algolia/algoliasearch-client-php": "^1.7"
+    },
+    "authors": [
+        {
+            "name": "Nicholas Thompson",
+            "email": "njt1982@gmail.com"
+        }
+    ]
+}
