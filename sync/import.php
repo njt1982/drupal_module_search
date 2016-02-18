@@ -17,7 +17,7 @@ $index = $client->initIndex('prod_drupal_modules');
 $url = 'https://www.drupal.org/api-d7/node.json?type=project_module&status=1&field_project_type=full&limit=50';
 
 $i = 0;
-$max_pages = 100;
+$max_pages = 800;
 
 do {
   echo "Processing: {$url}... ";
@@ -29,6 +29,9 @@ do {
       'title' => $node->title,
       'body' => strip_tags($node->body->value),
       'url' => $node->url,
+      'project_type' => $node->field_project_type,
+      'project_machine_name' => $node->field_project_machine_name,
+      'download_count' => $node->field_download_count,
     ];
   }
   $index->addObjects($batch);
