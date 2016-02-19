@@ -44,6 +44,10 @@
                 <input type="text" class="form-control" id="searchbox" placeholder="Search">
               </div>
             </form>
+            <div id="searchSummary"></div>
+
+            <div id="searchFacets" class="panel-group">
+            </div>
 
             <div>
               powered by <img src="images/Algolia_logo_bg-white.svg" style="height: 1em" />
@@ -79,18 +83,45 @@
     </div>
   </script>
 
+  <script id="searchSummaryTemplate" type="text/x-handlebars-template">
+    <p>Found about {{ hits }} in {{ time }}ms.</p>
+  </script>
+
+  <script id="searchFacetTemplate" type="text/x-handlebars-template">
+    <div class="panel panel-default facet">
+      <div class="panel-heading" role="tab" id="heading_{{name}}"  data-toggle="collapse" data-parent="#searchFacets" data-target="#collapse_{{name}}" aria-expanded="true" aria-controls="collapse_{{name}}">
+        <h4 class="panel-title">
+          {{ name }}
+        </h4>
+      </div>
+      <div id="collapse_{{name}}" class="panel-collapse{{#unless isRefined}} collapse{{/unless}}" role="tabpanel" aria-labelledby="heading_{{name}}">
+        <ul class="list-group pre-scrollable">
+          {{#each items}}
+          <li class="{{#refined}}refined{{/refined}} list-group-item" data-facet-key="{{ ../name }}" data-facet-value="{{ name }}">
+            <div class="value">{{ name }}</div>
+            <span class="badge">{{ count }}</span>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </script>
+
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/algoliasearch/dist/algoliasearch.js"></script>
     <script src="/bower_components/handlebars/handlebars.js"></script>
+    <script src="/bower_components/algoliasearch-helper/dist/algoliasearch.helper.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     
     <!-- build:js scripts/plugins.js -->
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
     <!--
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>

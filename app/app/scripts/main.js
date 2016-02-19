@@ -4,40 +4,101 @@
   'use strict';
   var app = {
     client: null,
-    index: null,
+    // index: null,
+    helper: null,
+
+    // facetFilters: {},
+    // query: '',
+
     searchBox: null,
+
     searchResultsContainer: null,
+    searchFacetsContainer: null,
+
     searchResultTemplate: null,
+    searchFacetTemplate: null,
 
     init: function() {
       this.client = algoliasearch('A644RMPSD6', '392ee956e285f537ee958f9f395c0253');
-      this.index = this.client.initIndex('prod_drupal_modules');
+      // this.index = this.client.initIndex('prod_drupal_modules');
+      this.helper = algoliasearchHelper(this.client, 'prod_drupal_modules', {
+        facets: ['author', 'category', 'maintenance_status', 'development_status', 'project_type']
+      });
+      this.helper.on('result', this.handleResults);
 
       this.searchResultTemplate = Handlebars.compile($('#searchResultTemplate').html());
+      this.searchFacetTemplate = Handlebars.compile($('#searchFacetTemplate').html());
+      this.searchSummaryTemplate = Handlebars.compile($('#searchSummaryTemplate').html());
+
       this.searchResultsContainer = $('#searchResults');
+      this.searchFacetsContainer = $('#searchFacets');
+      this.searchSummaryContainer = $('#searchSummary');
+
+      this.searchFacetsContainer.on('click', '[data-facet-key]', function(e) {
+        e.stopPropagation();
+        var $item = $(e.currentTarget);
+        var key = $item.data('facet-key');
+        var value = $item.data('facet-value');
+        // app.facetFilters[key] = value;
+        // app.search(app.query);
+        app.helper.setPage(0);
+        app.helper.toggleRefine(key, value).search();
+      });
 
       this.searchBox = $('#searchbox');
 
       this.searchBox.on('keyup', function(e) {
-        if (e.target.value !== '') {
-          app.index.search(e.target.value)
-            .then(function searchSuccess(content) {
-              app.searchResultsContainer.empty();
-
-              $.each(content.hits, function(i, item) {
-                app.searchResultsContainer.append(
-                  app.searchResultTemplate(item)
-                );
-              });
-            })
-            .catch(function searchError(err) {
-              console.error(err);
-            });
+        if (e.currentTarget.value !== '') {
+          // app.search(e.currentTarget.value);
+          app.helper.setQuery(e.currentTarget.value).search();
         }
         else {
           app.searchResultsContainer.empty();
         }
       });
+    },
+
+    handleResults: function(results, params) {
+      app.searchResultsContainer.empty();
+      app.searchFacetsContainer.empty();
+
+      console.log(results);
+
+      app.searchSummaryContainer.html(
+        app.searchSummaryTemplate({
+          hits: results.nbHits,
+          time: results.processingTimeMS
+        })
+      );
+
+      $.each(results.hits, function(i, item) {
+        app.searchResultsContainer.append(
+          app.searchResultTemplate(item)
+        );
+      });
+
+      $.each(results.facets, function(i, facet) {
+        var data = {
+          name: facet.name,
+          items: [],
+          isRefined: false,
+        }
+        for (var i in facet.data) {
+          var row = {
+            name: i,
+            count: facet.data[i],
+            refined: app.helper.isRefined(facet.name, i)
+          };
+          data.isRefined |= row.refined;
+
+          data.items.push(row);
+        }
+        app.searchFacetsContainer.append(
+          app.searchFacetTemplate(data)
+        );
+      });
+
+      app.searchFacetsContainer.collapse();
     }
   };
 

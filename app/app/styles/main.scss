@@ -64,3 +64,25 @@ body {
   }
 }
 
+#searchFacets {
+  .panel-heading {
+    cursor: pointer;
+    &:hover {
+      background: #f0f0f0
+    }
+  }
+  .list-group-item {
+    line-height: 1;
+    cursor: pointer;
+
+    .value {
+      @include text-overflow;
+      width: 85%;
+      display: inline-block;
+    }
+
+    &:hover {
+        background: #f0f0f0;
+    }
+  }
+}

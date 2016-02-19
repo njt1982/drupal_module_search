@@ -9,22 +9,26 @@ if (empty($algolia_key)) {
 }
 
 require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/api.php';
 
-$client = new \AlgoliaSearch\Client('A644RMPSD6', $algolia_key);
-$index = $client->initIndex('prod_drupal_modules');
+$algolia = new \AlgoliaSearch\Client('A644RMPSD6', $algolia_key);
+$index = $algolia->initIndex('prod_drupal_modules');
+
+$api = new DrupalApi();
 
 
-$url = 'https://www.drupal.org/api-d7/node.json?type=project_module&status=1&field_project_type=full&limit=50';
-
-$i = 0;
 $max_pages = 800;
 
+$page = 0;
 do {
-  echo "Processing: {$url}... ";
-  $data = json_decode(file_get_contents($url));
+  $res = $api->getNodes($page, 2);
+
+  $data = json_decode($res->getBody());
+  // print_r($data);
+
   $batch = [];
   foreach ($data->list as $node) {
-    $batch[] = [
+    $obj = [
       'objectID' => $node->nid,
       'title' => $node->title,
       'body' => strip_tags($node->body->value),
@@ -33,18 +37,54 @@ do {
       'project_machine_name' => $node->field_project_machine_name,
       'download_count' => $node->field_download_count,
     ];
+
+    if (property_exists($node, 'taxonomy_vocabulary_44')) {
+      if ($term = $api->getTerm($node->taxonomy_vocabulary_44->id)) {
+        $obj += [
+          'maintenance_status' => $term->name,
+        ];
+      }
+    }
+
+    if (property_exists($node, 'taxonomy_vocabulary_46')) {
+      if ($term = $api->getTerm($node->taxonomy_vocabulary_46->id)) {
+        $obj += [
+          'development_status' => $term->name,
+        ];
+      }
+    }
+
+    if (property_exists($node, 'taxonomy_vocabulary_3')) {
+      $obj += [
+        'category' => [],
+      ];
+      foreach ($node->taxonomy_vocabulary_3 as $category) {
+        if ($term = $api->getTerm($category->id)) {
+          if (empty($term) || !property_exists($term, 'name')) {
+            echo "Invalid term data for {$category->id}\n";
+          }
+          else {
+            $obj['category'][] = $term->name;
+          }
+        }
+      }
+    }
+
+    if (property_exists($node, 'author')) {
+      if ($author = $api->getUser($node->author->id)) {
+        $obj += ['author' => $author->name];
+      }
+    }
+
+    // print_r($obj);
+    $batch[] = $obj;
   }
+
+
   $index->addObjects($batch);
 
-  $url = (++$i < $max_pages) ? $data->next : FALSE;
-
-  // Hack to fix https://www.drupal.org/node/2670512#comment-10867800
-  if ($url) {
-    if (strpos($url, 'node?') !== FALSE) {
-      $url = str_replace('node?', 'node.json?', $url);
-    }
-  }
-
   echo "Done!\n";
-} while($url);
+
+  $page = property_exists($data, 'next') ? ++$page : FALSE;
+} while($page);
 
