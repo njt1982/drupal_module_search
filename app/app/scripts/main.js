@@ -109,6 +109,6 @@
 
   $('#menu-toggle').click(function(e) {
     e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
+    $('#wrapper').toggleClass('toggled');
   });
 })(jQuery, Handlebars, algoliasearch);

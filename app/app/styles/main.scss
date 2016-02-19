@@ -36,3 +36,12 @@ $icon-font-path: '../fonts/';
     }
   }
 }
+
+
+#menu-toggle {
+  color: $gray-lighter;
+  font-size: 2em;
+  &:focus {
+    outline: 0;
+  }
+}

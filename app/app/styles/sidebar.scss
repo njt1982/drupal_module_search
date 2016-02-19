@@ -1,3 +1,5 @@
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
 $expanded-size: 360px;
 $collapsed-size: 64px;
 
@@ -135,13 +137,5 @@ $collapsed-size: 64px;
     &:hover {
       background: #f0f0f0;
     }
-  }
-}
-
-#menu-toggle {
-  color: $gray-lighter;
-  font-size: 2em;
-  &:focus {
-    outline: 0;
   }
 }
