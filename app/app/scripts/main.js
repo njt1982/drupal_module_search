@@ -1,4 +1,4 @@
-/*global jQuery:false Handlebars:false algoliasearch:false */
+/*global jQuery:false Handlebars:false algoliasearch:false algoliasearchHelper:false */
 
 (function($, Handlebars, algoliasearch) {
   'use strict';
@@ -58,7 +58,7 @@
       });
     },
 
-    handleResults: function(results, params) {
+    handleResults: function(results) {
       app.searchResultsContainer.empty();
       app.searchFacetsContainer.empty();
 
@@ -81,13 +81,13 @@
         var data = {
           name: facet.name,
           items: [],
-          isRefined: false,
-        }
-        for (var i in facet.data) {
+          isRefined: false
+        };
+        for (var facetName in facet.data) {
           var row = {
-            name: i,
-            count: facet.data[i],
-            refined: app.helper.isRefined(facet.name, i)
+            name: facetName,
+            count: facet.data[facetName],
+            refined: app.helper.isRefined(facet.name, facetName)
           };
           data.isRefined |= row.refined;
 
