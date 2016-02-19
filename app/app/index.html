@@ -1,8 +1,8 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="description" content="">
+    <meta name="description" content="Improved Drupal Module Search">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Drupal Module Search</title>
 
@@ -26,42 +26,57 @@
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-        <h3 class="text-muted">Drupal module search</h3>
-      </div>
 
-      <div class="row">
-        <div class="col-lg-4 col-sm-4">
-          <div class="well">
-            <form>
-              <div class="form-group">
-                <input type="text" class="form-control" id="searchbox" placeholder="Search">
-              </div>
-            </form>
-            <div id="searchSummary"></div>
-
-            <div id="searchFacets" class="panel-group">
+    <div id="wrapper">
+      <div id="sidebar-wrapper">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-2">
+              <a href="#menu-toggle" id="menu-toggle">
+                <span class="glyphicon glyphicon-menu-hamburger"></span>
+              </a>
             </div>
+            <div class="col-sm-10">
+              <form id="searchform">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+                    <input type="search" class="form-control" id="searchbox" placeholder="Search">
+                  </div>
+                </div>
+              </form>
 
-            <div>
-              powered by <img src="images/Algolia_logo_bg-white.svg" style="height: 1em" />
+              <div id="searchSummary"></div>
+              <div id="searchFacets" class="panel-group"></div>
+
+              <div>powered by <img src="images/Algolia_logo_bg-dark.svg" style="height: 1em" /></div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="col-lg-8 col-sm-8">
-          <div id="searchResults"></div>
-          <div id="pager"></div>
+      <div id="page-content-wrapper">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="header">
+              <ul class="nav nav-pills pull-right">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about" data-toggle="modal" data-target="#about">About</a></li>
+              </ul>
+              <h3 class="text-muted">Drupal module search</h3>
+            </div>
+
+            <div class="col-lg-12">
+
+              <div id="searchResults"></div>
+              <div id="pager"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    
+
+
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <!--
     <script>
@@ -89,12 +104,11 @@
 
   <script id="searchFacetTemplate" type="text/x-handlebars-template">
     <div class="panel panel-default facet">
-      <div class="panel-heading" role="tab" id="heading_{{name}}"  data-toggle="collapse" data-parent="#searchFacets" data-target="#collapse_{{name}}" aria-expanded="true" aria-controls="collapse_{{name}}">
-        <h4 class="panel-title">
-          {{ name }}
-        </h4>
+      <div class="panel-heading collapsed" role="tab" id="heading_{{key}}"  data-toggle="collapse" data-parent="#searchFacets" data-target="#collapse_{{key}}" aria-expanded="true" aria-controls="collapse_{{key}}">
+        <span class="icon"></span>
+        <span class="panel-title small">{{ name }}</span>
       </div>
-      <div id="collapse_{{name}}" class="panel-collapse{{#unless isRefined}} collapse{{/unless}}" role="tabpanel" aria-labelledby="heading_{{name}}">
+      <div id="collapse_{{key}}" class="panel-collapse{{#unless isRefined}} collapse{{/unless}}" role="tabpanel" aria-labelledby="heading_{{key}}">
         <ul class="list-group pre-scrollable">
           {{#each items}}
           <li class="{{#refined}}refined{{/refined}} list-group-item" data-facet-key="{{ ../name }}" data-facet-value="{{ name }}">
@@ -118,6 +132,7 @@
     <!-- endbuild -->
     
     <!-- build:js scripts/plugins.js -->
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
     <!--
@@ -139,5 +154,14 @@
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
+
+    <div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <p>This site aggregates data from Drupal.org and is kindly powered by <img src="images/Algolia_logo_bg-white.svg" style="height: 1em" />.</p>
+          </div>
+        </div>
+    </div>
   </body>
 </html>

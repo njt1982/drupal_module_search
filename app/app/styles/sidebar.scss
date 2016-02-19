@@ -1,0 +1,147 @@
+$expanded-size: 360px;
+$collapsed-size: 64px;
+
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+
+  &.toggled {
+    padding-left: $expanded-size;
+    #sidebar-wrapper {
+      width: $expanded-size;
+    }
+    #page-content-wrapper {
+      position: absolute;
+      margin-right: -$expanded-size;
+    }
+  }
+}
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: $expanded-size;
+  width: 0;
+  height: 100%;
+  margin-left: -$expanded-size;
+  overflow-y: auto;
+  background: #000;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  .container-fluid {
+    width: $expanded-size;
+    padding: 15px;
+  }
+
+  color: $gray-lighter;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  position: absolute;
+  padding: 15px;
+}
+
+@media(min-width:768px) {
+  #wrapper {
+    padding-left: $expanded-size;
+    &.toggled {
+      padding-left: $collapsed-size;
+      #sidebar-wrapper {
+        width: $collapsed-size;
+      }
+      #page-content-wrapper {
+        position: relative;
+        margin-right: $collapsed-size;
+      }
+    }
+  }
+
+  #sidebar-wrapper {
+    width: $expanded-size;
+  }
+
+  #page-content-wrapper {
+    padding: 20px;
+    position: relative;
+  }
+}
+
+#searchbox {
+  background-color: $gray-darker;
+  border: 0;
+  border-radius: 0;
+  color: $gray-lighter;
+  box-shadow: none;
+  @include transition(all .2s ease-in-out);
+  &:focus {
+    background-color: $gray-dark;
+  }
+}
+#searchform {
+  .input-group-addon {
+    background-color: $gray-darker;
+    border: 0;
+    color: $gray-lighter;
+  }
+}
+
+#searchFacets {
+  .panel {
+    border-radius: 0;
+    border-width: 0;
+  }
+  .panel-heading {
+    cursor: pointer;
+    background-color: $gray-darker;
+    color: $gray-lighter;
+    border: 0;
+    border-radius: 0;
+
+    &:hover {
+      background: $gray-dark;
+    }
+    .icon {
+      @extend .glyphicon;
+      @extend .glyphicon-chevron-down;
+    }
+    &.collapsed {
+      .icon {
+        @extend .glyphicon-chevron-right;
+      }
+    }
+  }
+  .list-group {
+    border:0;
+  }
+  .list-group-item {
+    line-height: 1;
+    cursor: pointer;
+    background-color: $gray;
+    border:0;
+    border-radius:0;
+
+    .value {
+      @include text-overflow;
+      width: 85%;
+      display: inline-block;
+    }
+
+    &:hover {
+      background: #f0f0f0;
+    }
+  }
+}
+
+#menu-toggle {
+  color: $gray-lighter;
+  font-size: 2em;
+  &:focus {
+    outline: 0;
+  }
+}

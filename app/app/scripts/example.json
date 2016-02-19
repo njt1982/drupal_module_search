@@ -1,0 +1,825 @@
+{
+   "processingTimeMS" : 3,
+   "page" : 0,
+   "_state" : {
+      "numericRefinements" : {},
+      "hierarchicalFacets" : [],
+      "tagRefinements" : [],
+      "disjunctiveFacets" : [],
+      "hierarchicalFacetsRefinements" : {},
+      "page" : 0,
+      "query" : "a",
+      "index" : "prod_drupal_modules",
+      "facetsRefinements" : {},
+      "facetsExcludes" : {},
+      "facets" : [
+         "author",
+         "category",
+         "maintenance_status",
+         "development_status",
+         "project_type"
+      ],
+      "disjunctiveFacetsRefinements" : {}
+   },
+   "query" : "a",
+   "index" : "prod_drupal_modules",
+   "facets" : [
+      {
+         "data" : {
+            "kbahey" : 1,
+            "dww" : 1,
+            "hutch" : 1,
+            "sun" : 2,
+            "shenzhuxi" : 1,
+            "naudefj" : 1,
+            "killes@www.drop.org" : 1,
+            "Unsupported Projects" : 2,
+            "oadaeh" : 1,
+            "moshe weitzman" : 1,
+            "joshk" : 1,
+            "Darren Oh" : 1,
+            "profix898" : 1,
+            "willvincent" : 1,
+            "deekayen" : 1
+         },
+         "name" : "author",
+         "exhaustive" : true
+      },
+      {
+         "data" : {
+            "E-commerce" : 1,
+            "Utility" : 2,
+            "Community" : 3,
+            "Filters/Editors" : 1,
+            "Commerce/Advertising" : 1,
+            "Content Display" : 1,
+            "Drush" : 1,
+            "Media" : 1,
+            "Administration" : 2,
+            "Content" : 1,
+            "Education" : 1,
+            "Syndication" : 1,
+            "Mail" : 1,
+            "Third-party Integration" : 1,
+            "Event" : 1,
+            "Developer" : 1
+         },
+         "exhaustive" : true,
+         "name" : "category"
+      },
+      {
+         "name" : "maintenance_status",
+         "exhaustive" : true,
+         "data" : {
+            "Seeking new maintainer" : 2,
+            "Seeking co-maintainer(s)" : 4,
+            "Minimally maintained" : 2,
+            "Actively maintained" : 4,
+            "Unsupported" : 3
+         }
+      },
+      {
+         "name" : "development_status",
+         "exhaustive" : true,
+         "data" : {
+            "Obsolete" : 2,
+            "Under active development" : 6,
+            "Maintenance fixes only" : 3,
+            "No further development" : 3
+         }
+      },
+      {
+         "data" : {
+            "full" : 18
+         },
+         "name" : "project_type",
+         "exhaustive" : true
+      }
+   ],
+   "nbHits" : 18,
+   "hits" : [
+      {
+         "body" : "This project is an implementation of the Amazon Product Advertising API. \nIt's modular in design, with a central \"Pure API\" component that interacts with Amazon, and optional modules to handle expanded data for additional product types, features like wish-lists and customer reviews, etc.\nThe Amazon API and Amazon Store Modules will now be actively maintained, updated and enhanced. \nIt goes with saying “Everyone and anyone can participate and contribute to the project: testing new releases, asking for new features and of course module development/patches.”\nWhat’s Happening\nThe Amazon API module last major development over 3+ years ago, so the module needs to “modernized” and updated to match the current Amazon API . Over the next couple of months several sprints will occur to release critical updates and more specifically new features. You can leave a ticket or join the conversation at the scheduled times.\nPrimary Images &amp; Galleries Image(s)\nMedia is a fundamental part of commerce, so the Amazon Module will now include support for handling the primary image, in addition to image gallery displays with Owl Carousel support.\nThe 7.x-2.x-dev release updates the Amazon API schema to include support for image galleries.\n\nAmazon Content Type \nThe Amazon API, Amazon Store and Amazon Content Type (coming soon) will communicate more cohesively for enhanced product management. Including features like overriding Product information (Title, Details, Description, Images, etc…) and ready-to-use blocks like “Featured Products” and “Top Sellers”.\nIn other words, when a product on Amazon has a less than desirable description (too short, bad language, incorrect formatting) an administrator will be able to override/append/prepend the description.\n\nThe module includes the following functionality:\nCCK integration via an 'Amazon product' field type\nExtensive Views integration\nSupport for extended Amazon product data (like page counts for books, and MPAA ratings for DVDs)\nQuick-insertion of Amazon item information in node content via an input filter\nSimple search integration\nBasic token support for product data\nAmazon requires that all access to its data use an API key. To use this module, you must sign up for an Amazon API account and request an access key. This process is free, but without it, the module won't do anything.  In addition, if you want to earn money from referrals to Amazon, you will want an Associate ID. Please refer to the documentation for links to the associate page for your locale.\nRelated modules:\nAmazon Store, a complete store with shopping cart\nCall for community contributions\nThis is a community project and improvements/maintenance/support on this take a lot of time. Those of you who use it can help by:\nImproving the documentation, Add recipes, template modifications, suggestions.\nProviding patches and improvements\nHelping build tests. This module needs a Simpletest test suite.\nSponsoring features and the completion of the Drupal 7 update.\n",
+         "development_status" : "Under active development",
+         "_snippetResult" : {
+            "body" : {
+               "value" : "for <mark>a</mark>n <mark>A</mark>mazon <mark>A</mark>PI <mark>a</mark>ccount <mark>a</mark>nd request <mark>a</mark>n <mark>a</mark>ccess key",
+               "matchLevel" : "full"
+            }
+         },
+         "url" : "https://www.drupal.org/project/amazon",
+         "maintenance_status" : "Actively maintained",
+         "author" : "willvincent",
+         "project_machine_name" : "amazon",
+         "_highlightResult" : {
+            "title" : {
+               "value" : "<mark>A</mark>mazon Product <mark>A</mark>dvertisement <mark>A</mark>PI",
+               "matchedWords" : [
+                  "a"
+               ],
+               "matchLevel" : "full"
+            },
+            "body" : {
+               "value" : "This project is <mark>a</mark>n implementation of the <mark>A</mark>mazon Product <mark>A</mark>dvertising <mark>A</mark>PI. \nIt's modular in design, with <mark>a</mark> central \"Pure <mark>A</mark>PI\" component that interacts with <mark>A</mark>mazon, <mark>a</mark>nd optional modules to handle expanded data for <mark>a</mark>dditional product types, features like wish-lists <mark>a</mark>nd customer reviews, etc.\nThe <mark>A</mark>mazon <mark>A</mark>PI <mark>a</mark>nd <mark>A</mark>mazon Store Modules will now be <mark>a</mark>ctively maintained, updated <mark>a</mark>nd enhanced. \nIt goes with saying “Everyone <mark>a</mark>nd <mark>a</mark>nyone can participate <mark>a</mark>nd contribute to the project: testing new releases, <mark>a</mark>sking for new features <mark>a</mark>nd of course module development/patches.”\nWhat’s Happening\nThe <mark>A</mark>mazon <mark>A</mark>PI module last major development over 3+ years <mark>a</mark>go, so the module needs to “modernized” <mark>a</mark>nd updated to match the current <mark>A</mark>mazon <mark>A</mark>PI . Over the next couple of months several sprints will occur to release critical updates <mark>a</mark>nd more specifically new features. You can leave <mark>a</mark> ticket or join the conversation <mark>a</mark>t the scheduled times.\nPrimary Images &amp; Galleries Image(s)\nMedia is <mark>a</mark> fundamental part of commerce, so the <mark>A</mark>mazon Module will now include support for handling the primary image, in <mark>a</mark>ddition to image gallery displays with Owl Carousel support.\nThe 7.x-2.x-dev release updates the <mark>A</mark>mazon <mark>A</mark>PI schema to include support for image galleries.\n\n<mark>A</mark>mazon Content Type \nThe <mark>A</mark>mazon <mark>A</mark>PI, <mark>A</mark>mazon Store <mark>a</mark>nd <mark>A</mark>mazon Content Type (coming soon) will communicate more cohesively for enhanced product management. Including features like overriding Product information (Title, Details, Description, Images, etc…) <mark>a</mark>nd ready-to-use blocks like “Featured Products” <mark>a</mark>nd “Top Sellers”.\nIn other words, when <mark>a</mark> product on <mark>A</mark>mazon has <mark>a</mark> less than desirable description (too short, bad language, incorrect formatting) <mark>a</mark>n <mark>a</mark>dministrator will be <mark>a</mark>ble to override/<mark>a</mark>ppend/prepend the description.\n\nThe module includes the following functionality:\nCCK integration via <mark>a</mark>n '<mark>A</mark>mazon product' field type\nExtensive Views integration\nSupport for extended <mark>A</mark>mazon product data (like page counts for books, <mark>a</mark>nd MPAA ratings for DVDs)\nQuick-insertion of <mark>A</mark>mazon item information in node content via <mark>a</mark>n input filter\nSimple search integration\nBasic token support for product data\n<mark>A</mark>mazon requires that <mark>a</mark>ll <mark>a</mark>ccess to its data use <mark>a</mark>n <mark>A</mark>PI key. To use this module, you must sign up for <mark>a</mark>n <mark>A</mark>mazon <mark>A</mark>PI <mark>a</mark>ccount <mark>a</mark>nd request <mark>a</mark>n <mark>a</mark>ccess key. This process is free, but without it, the module won't do <mark>a</mark>nything.  In <mark>a</mark>ddition, if you want to earn money from referrals to <mark>A</mark>mazon, you will want <mark>a</mark>n <mark>A</mark>ssociate ID. Please refer to the documentation for links to the <mark>a</mark>ssociate page for your locale.\nRelated modules:\n<mark>A</mark>mazon Store, <mark>a</mark> complete store with shopping cart\nCall for community contributions\nThis is <mark>a</mark> community project <mark>a</mark>nd improvements/maintenance/support on this take <mark>a</mark> lot of time. Those of you who use it can help by:\nImproving the documentation, <mark>A</mark>dd recipes, template modifications, suggestions.\nProviding patches <mark>a</mark>nd improvements\nHelping build tests. This module needs <mark>a</mark> Simpletest test suite.\nSponsoring features <mark>a</mark>nd the completion of the Drupal 7 update.\n",
+               "matchedWords" : [
+                  "a"
+               ],
+               "matchLevel" : "full"
+            },
+            "url" : {
+               "matchLevel" : "full",
+               "matchedWords" : [
+                  "a"
+               ],
+               "value" : "https://www.drupal.org/project/<mark>a</mark>mazon"
+            }
+         },
+         "category" : [
+            "Commerce/Advertising",
+            "E-commerce",
+            "Media"
+         ],
+         "objectID" : "3219",
+         "download_count" : "55361",
+         "title" : "Amazon Product Advertisement API",
+         "project_type" : "full"
+      },
+      {
+         "download_count" : "3939",
+         "title" : "Annotation",
+         "project_type" : "full",
+         "_highlightResult" : {
+            "body" : {
+               "value" : "<mark>A</mark>llows users to <mark>a</mark>nnotate content in Drupal. \n7.x-1.x\n<mark>A</mark>nnotation entity was provided by this module for Drupal 7.\nThis module only provides storage for <mark>a</mark>nnotations <mark>a</mark>nd currently only one lib (<mark>A</mark>nnotator) was supported. So to make <mark>a</mark>nnotation, please install <mark>A</mark>nnotator module. \nThis module is started with https://github.com/sanduhrs/drupal-<mark>a</mark>nnotator/tree/7.x-1.x/modules/<mark>a</mark>nnota... by sanduhrs (Thanks very much!). \n6.x-1.x\nWe currently support both image <mark>a</mark>nnotation <mark>a</mark>nd text <mark>a</mark>nnotation.\nThis D6 module is in <mark>a</mark> very early <mark>a</mark>lpha stage. Do not download this module unless you plan to contribute code.6.x <mark>a</mark>nd 7.x <mark>a</mark>re completely different, <mark>a</mark>nd there is no upgrade path.",
+               "matchedWords" : [
+                  "a"
+               ],
+               "matchLevel" : "full"
+            },
+            "url" : {
+               "matchLevel" : "full",
+               "value" : "https://www.drupal.org/project/<mark>a</mark>nnotation",
+               "matchedWords" : [
+                  "a"
+               ]
+            },
+            "title" : {
+               "matchedWords" : [
+                  "a"
+               ],
+               "value" : "<mark>A</mark>nnotation",
+               "matchLevel" : "full"
+            }
+         },
+         "category" : [
+            "Community",
+            "Content",
+            "Education",
+            "Utility"
+         ],
+         "objectID" : "3220",
+         "author" : "shenzhuxi",
+         "project_machine_name" : "annotation",
+         "development_status" : "Under active development",
+         "body" : "Allows users to annotate content in Drupal. \n7.x-1.x\nAnnotation entity was provided by this module for Drupal 7.\nThis module only provides storage for annotations and currently only one lib (Annotator) was supported. So to make annotation, please install Annotator module. \nThis module is started with https://github.com/sanduhrs/drupal-annotator/tree/7.x-1.x/modules/annota... by sanduhrs (Thanks very much!). \n6.x-1.x\nWe currently support both image annotation and text annotation.\nThis D6 module is in a very early alpha stage. Do not download this module unless you plan to contribute code.6.x and 7.x are completely different, and there is no upgrade path.",
+         "url" : "https://www.drupal.org/project/annotation",
+         "_snippetResult" : {
+            "body" : {
+               "matchLevel" : "full",
+               "value" : "6.x <mark>a</mark>nd 7.x <mark>a</mark>re completely different, <mark>a</mark>nd there"
+            }
+         },
+         "maintenance_status" : "Seeking co-maintainer(s)"
+      },
+      {
+         "development_status" : "No further development",
+         "body" : "Provides an Atom 1.0 feed.\nTo help expose some of Atom's functionality, try Syndication.",
+         "url" : "https://www.drupal.org/project/atom",
+         "_snippetResult" : {
+            "body" : {
+               "matchLevel" : "full",
+               "value" : "Provides <mark>a</mark>n <mark>A</mark>tom 1.0 feed.\nTo help expose some"
+            }
+         },
+         "maintenance_status" : "Unsupported",
+         "author" : "deekayen",
+         "project_machine_name" : "atom",
+         "_highlightResult" : {
+            "title" : {
+               "matchedWords" : [
+                  "a"
+               ],
+               "value" : "<mark>A</mark>tom",
+               "matchLevel" : "full"
+            },
+            "url" : {
+               "value" : "https://www.drupal.org/project/<mark>a</mark>tom",
+               "matchedWords" : [
+                  "a"
+               ],
+               "matchLevel" : "full"
+            },
+            "body" : {
+               "matchedWords" : [
+                  "a"
+               ],
+               "value" : "Provides <mark>a</mark>n <mark>A</mark>tom 1.0 feed.\nTo help expose some of <mark>A</mark>tom's functionality, try Syndication.",
+               "matchLevel" : "full"
+            }
+         },
+         "category" : [
+            "Syndication"
+         ],
+         "objectID" : "3221",
+         "download_count" : "13004",
+         "title" : "Atom",
+         "project_type" : "full"
+      },
+      {
+         "body" : "A module that lets you track CVS commit messages.  You can see it in action at http://drupal.org/cvs.  Interfaces with the project module to make releases via specific CVS branches and tags, and provides per-project source code access control.\nThe HEAD branch of this module has been ported to Drupal 6 and is now running on drupal.org.  However, we'd like to put some finishing touches on things before we create an official 6.x-1.0 release for widespread use.\nPlease read about How to help with the project* modules if you can spare any effort to support one of the key modules that powers drupal.org and all Drupal development.\nThis module is maintained by Derek Wright (dww) and Chad Phillips (hunmonk) of 3281d Consulting.  Anyone interested in paid support, customization, or sponsoring features should contact 3281d.com.",
+         "development_status" : "Maintenance fixes only",
+         "url" : "https://www.drupal.org/project/cvslog",
+         "_snippetResult" : {
+            "body" : {
+               "matchLevel" : "full",
+               "value" : "that powers drupal.org <mark>a</mark>nd <mark>a</mark>ll Drupal development.\nThis module"
+            }
+         },
+         "maintenance_status" : "Seeking co-maintainer(s)",
+         "author" : "dww",
+         "project_machine_name" : "cvslog",
+         "category" : [],
+         "_highlightResult" : {
+            "title" : {
+               "value" : "CVS integration",
+               "matchedWords" : [],
+               "matchLevel" : "none"
+            },
+            "body" : {
+               "matchLevel" : "full",
+               "value" : "<mark>A</mark> module that lets you track CVS commit messages.  You can see it in <mark>a</mark>ction <mark>a</mark>t http://drupal.org/cvs.  Interfaces with the project module to make releases via specific CVS branches <mark>a</mark>nd tags, <mark>a</mark>nd provides per-project source code <mark>a</mark>ccess control.\nThe HEAD branch of this module has been ported to Drupal 6 <mark>a</mark>nd is now running on drupal.org.  However, we'd like to put some finishing touches on things before we create <mark>a</mark>n official 6.x-1.0 release for widespread use.\nPlease read <mark>a</mark>bout How to help with the project* modules if you can spare <mark>a</mark>ny effort to support one of the key modules that powers drupal.org <mark>a</mark>nd <mark>a</mark>ll Drupal development.\nThis module is maintained by Derek Wright (dww) <mark>a</mark>nd Chad Phillips (hunmonk) of 3281d Consulting.  <mark>A</mark>nyone interested in paid support, customization, or sponsoring features should contact 3281d.com.",
+               "matchedWords" : [
+                  "a"
+               ]
+            },
+            "url" : {
+               "matchedWords" : [],
+               "value" : "https://www.drupal.org/project/cvslog",
+               "matchLevel" : "none"
+            }
+         },
+         "objectID" : "3235",
+         "title" : "CVS integration",
+         "download_count" : "8467",
+         "project_type" : "full"
+      },
+      {
+         "_highlightResult" : {
+            "title" : {
+               "matchLevel" : "none",
+               "value" : "Feature",
+               "matchedWords" : []
+            },
+            "url" : {
+               "matchedWords" : [],
+               "value" : "https://www.drupal.org/project/feature",
+               "matchLevel" : "none"
+            },
+            "body" : {
+               "matchLevel" : "full",
+               "value" : "<mark>A</mark> module that lets you organize <mark>a</mark>nd maintain <mark>a</mark> feature list by category.\nThe 5.0 <mark>a</mark>nd later version has configurable categories.\nThis module was used to run the Drupal.org \"features\" page but is now retired.\nNOTE: This modules precedes, <mark>a</mark>nd is not related in <mark>a</mark>ny way, to the more popular features module!",
+               "matchedWords" : [
+                  "a"
+               ]
+            }
+         },
+         "category" : [],
+         "objectID" : "3241",
+         "title" : "Feature",
+         "download_count" : "5622",
+         "project_type" : "full",
+         "_snippetResult" : {
+            "body" : {
+               "matchLevel" : "full",
+               "value" : "<mark>A</mark> module that lets you organize <mark>a</mark>nd maintain <mark>a</mark> feature"
+            }
+         },
+         "url" : "https://www.drupal.org/project/feature",
+         "development_status" : "No further development",
+         "body" : "A module that lets you organize and maintain a feature list by category.\nThe 5.0 and later version has configurable categories.\nThis module was used to run the Drupal.org \"features\" page but is now retired.\nNOTE: This modules precedes, and is not related in any way, to the more popular features module!",
+         "maintenance_status" : "Minimally maintained",
+         "author" : "kbahey",
+         "project_machine_name" : "feature"
+      },
+      {
+         "objectID" : "3226",
+         "_highlightResult" : {
+            "title" : {
+               "matchLevel" : "none",
+               "matchedWords" : [],
+               "value" : "Birthday"
+            },
+            "body" : {
+               "matchLevel" : "full",
+               "matchedWords" : [
+                  "a"
+               ],
+               "value" : "<mark>A</mark> simple module that enables <mark>a</mark> block which displays the users' birthday\ndates."
+            },
+            "url" : {
+               "value" : "https://www.drupal.org/project/birthday",
+               "matchedWords" : [],
+               "matchLevel" : "none"
+            }
+         },
+         "category" : [],
+         "project_type" : "full",
+         "download_count" : "171",
+         "title" : "Birthday",
+         "maintenance_status" : "Unsupported",
+         "url" : "https://www.drupal.org/project/birthday",
+         "_snippetResult" : {
+            "body" : {
+               "value" : "<mark>A</mark> simple module that enables <mark>a</mark> block which displays the",
+               "matchLevel" : "full"
+            }
+         },
+         "body" : "A simple module that enables a block which displays the users' birthday\ndates.",
+         "project_machine_name" : "birthday",
+         "author" : "Unsupported Projects"
+      },
+      {
+         "body" : "Allows you to add other site users to your buddy list, organize these into groups, and monitor their content. It is a basic building block for anyone wishing to make a social networking site in Drupal. The 4.7 version is much more feature-rich than the 4.6 version. Allows integration with other modules, such as Invite, to do things like add invited members to buddylists automatically. The word \"buddy\" can now be changed altogether by editing the translations array at the top of the buddylist.module file.\nMaintainers\nJosh Koenig (joshk)Dominik Kiss (nodestroy)\nDrupal 5.0 version available for testing\nPlease test out the new 5.0 version and report any bugs you may find. There is also a new working group dedicated to discussing social networking sites (like MySpace and Facebook). If you are interested in this area, please join the group and take part in the discussion.\n",
+         "url" : "https://www.drupal.org/project/buddylist",
+         "_snippetResult" : {
+            "body" : {
+               "value" : "MySpace <mark>a</mark>nd Facebook). If you <mark>a</mark>re interested in this <mark>a</mark>rea",
+               "matchLevel" : "full"
+            }
+         },
+         "project_machine_name" : "buddylist",
+         "author" : "joshk",
+         "objectID" : "3230",
+         "_highlightResult" : {
+            "url" : {
+               "matchedWords" : [],
+               "value" : "https://www.drupal.org/project/buddylist",
+               "matchLevel" : "none"
+            },
+            "body" : {
+               "value" : "<mark>A</mark>llows you to <mark>a</mark>dd other site users to your buddy list, organize these into groups, <mark>a</mark>nd monitor their content. It is <mark>a</mark> basic building block for <mark>a</mark>nyone wishing to make <mark>a</mark> social networking site in Drupal. The 4.7 version is much more feature-rich than the 4.6 version. <mark>A</mark>llows integration with other modules, such <mark>a</mark>s Invite, to do things like <mark>a</mark>dd invited members to buddylists <mark>a</mark>utomatically. The word \"buddy\" can now be changed <mark>a</mark>ltogether by editing the translations <mark>a</mark>rray <mark>a</mark>t the top of the buddylist.module file.\nMaintainers\nJosh Koenig (joshk)Dominik Kiss (nodestroy)\nDrupal 5.0 version <mark>a</mark>vailable for testing\nPlease test out the new 5.0 version <mark>a</mark>nd report <mark>a</mark>ny bugs you may find. There is <mark>a</mark>lso <mark>a</mark> new working group dedicated to discussing social networking sites (like MySpace <mark>a</mark>nd Facebook). If you <mark>a</mark>re interested in this <mark>a</mark>rea, please join the group <mark>a</mark>nd take part in the discussion.\n",
+               "matchedWords" : [
+                  "a"
+               ],
+               "matchLevel" : "full"
+            },
+            "title" : {
+               "matchedWords" : [],
+               "value" : "Buddylist",
+               "matchLevel" : "none"
+            }
+         },
+         "category" : [
+            "Community"
+         ],
+         "project_type" : "full",
+         "download_count" : "13076",
+         "title" : "Buddylist"
+      },
+      {
+         "download_count" : "42676",
+         "title" : "Feedback",
+         "project_type" : "full",
+         "_highlightResult" : {
+            "title" : {
+               "matchLevel" : "none",
+               "value" : "Feedback",
+               "matchedWords" : []
+            },
+            "url" : {
+               "value" : "https://www.drupal.org/project/feedback",
+               "matchedWords" : [],
+               "matchLevel" : "none"
+            },
+            "body" : {
+               "matchedWords" : [
+                  "a"
+               ],
+               "value" : "Feedback <mark>a</mark>llows users <mark>a</mark>nd visitors of <mark>a</mark> Drupal site to quickly send feedback messages <mark>a</mark>bout the currently displayed page, using <mark>a</mark> fixed positioned <mark>a</mark>nd <mark>a</mark>jaxified feedback form.  This helps site <mark>a</mark>dministrators in quality <mark>a</mark>ssurance of their pages, contents <mark>a</mark>nd theme.\nBecause the form is submitted via <mark>A</mark>JAX, <mark>a</mark> user will not be redirected to <mark>a</mark>nother page <mark>a</mark>nd can continue visiting/using the site <mark>a</mark>fter posting feedback.\n<mark>A</mark>ll feedback messages <mark>a</mark>re listed <mark>a</mark>nd grouped by status in <mark>a</mark>n <mark>a</mark>dministrative feedback log.  Each feedback message can be marked <mark>a</mark>s 'done'.  Privileged users <mark>a</mark>re <mark>a</mark>ble to see existing feedback messages for the currently displayed page to prevent submitting duplicate feedbacks for <mark>a</mark>lready known issues (f.e. during site building).  Since feedback messages <mark>a</mark>re <mark>a</mark>dditionally stored with <mark>a</mark> 'masked' path (similar to dynamic menu item <mark>a</mark>rguments in D6, i.e. user/%/edit), existing feedback messages for similar pages can be displayed (except node/% paths).\nFeedback optionally integrates with BrowsCap to <mark>a</mark>dditionally record the user <mark>a</mark>gent for each feedback message, which helps in tracking down theming issues.\nDependencies\n6.x, 7.x: None.\n5.x: jQuery Update 2.x\nInstallation\nPlease see current README.txt, http://drupalcode.org/project/feedback.git/blob_plain/HEAD:/README.txt\nCredits\nCurrent maintainer:\nBen Hall (Eluchel)\nFormer Maintainers: \nDaniel F. Kudwien (sun)\nJody Hamilton (Jody Lynn)\nThis project has been sponsored by:\nunleashed mind\nSpecialized in consulting <mark>a</mark>nd development of Drupal powered sites, our services include installation, development, theming, customization, <mark>a</mark>nd hosting to get you started. Visit http://www.unleashedmind.com for more information.\nZivtech\n",
+               "matchLevel" : "full"
+            }
+         },
+         "category" : [
+            "Administration"
+         ],
+         "objectID" : "3242",
+         "author" : "sun",
+         "project_machine_name" : "feedback",
+         "development_status" : "Under active development",
+         "body" : "Feedback allows users and visitors of a Drupal site to quickly send feedback messages about the currently displayed page, using a fixed positioned and ajaxified feedback form.  This helps site administrators in quality assurance of their pages, contents and theme.\nBecause the form is submitted via AJAX, a user will not be redirected to another page and can continue visiting/using the site after posting feedback.\nAll feedback messages are listed and grouped by status in an administrative feedback log.  Each feedback message can be marked as 'done'.  Privileged users are able to see existing feedback messages for the currently displayed page to prevent submitting duplicate feedbacks for already known issues (f.e. during site building).  Since feedback messages are additionally stored with a 'masked' path (similar to dynamic menu item arguments in D6, i.e. user/%/edit), existing feedback messages for similar pages can be displayed (except node/% paths).\nFeedback optionally integrates with BrowsCap to additionally record the user agent for each feedback message, which helps in tracking down theming issues.\nDependencies\n6.x, 7.x: None.\n5.x: jQuery Update 2.x\nInstallation\nPlease see current README.txt, http://drupalcode.org/project/feedback.git/blob_plain/HEAD:/README.txt\nCredits\nCurrent maintainer:\nBen Hall (Eluchel)\nFormer Maintainers: \nDaniel F. Kudwien (sun)\nJody Hamilton (Jody Lynn)\nThis project has been sponsored by:\nunleashed mind\nSpecialized in consulting and development of Drupal powered sites, our services include installation, development, theming, customization, and hosting to get you started. Visit http://www.unleashedmind.com for more information.\nZivtech\n",
+         "url" : "https://www.drupal.org/project/feedback",
+         "_snippetResult" : {
+            "body" : {
+               "value" : "messages <mark>a</mark>re <mark>a</mark>dditionally stored with <mark>a</mark> 'masked' path (similar to",
+               "matchLevel" : "full"
+            }
+         },
+         "maintenance_status" : "Actively maintained"
+      },
+      {
+         "_highlightResult" : {
+            "url" : {
+               "matchLevel" : "none",
+               "matchedWords" : [],
+               "value" : "https://www.drupal.org/project/breadcrumb"
+            },
+            "body" : {
+               "matchLevel" : "full",
+               "value" : "Creates <mark>a</mark> breadcrumb trail, which serves <mark>a</mark>s <mark>a</mark> navigational <mark>a</mark>id for the user.  The breadcrumb trail contains links to pages higher in site hierarchy, i.e., <mark>a</mark>bove the current location.\nThe primary goal of this project is to replace Drupal core's breadcrumb trails functionality deeply buried into includes/menu.inc by moving it into <mark>a</mark> dedicated module, to be moved into core for D8.\nCo-<mark>a</mark>uthors + maintainers wanted.\nGoals\nExpose <mark>a</mark> block containing the breadcrumb.  Make it possible to spawn multiple blocks (configurations) for Panels (Everywhere) compatiblity.\nConfiguration options:\nOptional custom prefix; e.g., \"You <mark>a</mark>re here:\" (none by default)\nSeparator character/string, if <mark>a</mark>ny. (» by default)\nWhether to include current page, optionally clickable. (disabled by default)\nConfigurable \"Home\" string.\nWhether to hide breadcrumb if it only contains \"Home\".\n\nMake it exportable.\nDefault to menu_get_<mark>a</mark>ctive_breadcrumb() <mark>a</mark>s data source, but <mark>a</mark>llow to tie in other modules (such <mark>a</mark>s Hansel breadcrumbs, Clickpath, or custom code)\nPurposively <mark>a</mark>ccount for \"<mark>a</mark>ttached <mark>a</mark>like\" breadcrumb enhancements like <mark>a</mark> \"Back to last non-<mark>a</mark>dmin page\" link prefixed to the output, or <mark>a</mark> custom #pre_render that needs the entire menu link $tree for each link in $trail to convert each breadcrumb link into <mark>a</mark> dropdown link list providing <mark>a</mark>ccess to sibling pages (like Crumbdown).\nConsider merging one or more of the following:\nMenu Breadcrumb\nMenu Trails\nCustom Breadcrumbs\nNode Trail\nTaxonomy Menu Trails\nTaxonomy Breadcrumb\nPrimary term / Primary Term to <mark>A</mark>ctive Menu Item\n...but stay within the common scope <mark>a</mark>nd constraints of Drupal core.\n\nMove this module into Drupal 8 core.\n",
+               "matchedWords" : [
+                  "a"
+               ]
+            },
+            "title" : {
+               "value" : "Breadcrumb",
+               "matchedWords" : [],
+               "matchLevel" : "none"
+            }
+         },
+         "category" : [],
+         "objectID" : "3229",
+         "title" : "Breadcrumb",
+         "download_count" : "2906",
+         "project_type" : "full",
+         "development_status" : "Under active development",
+         "body" : "Creates a breadcrumb trail, which serves as a navigational aid for the user.  The breadcrumb trail contains links to pages higher in site hierarchy, i.e., above the current location.\nThe primary goal of this project is to replace Drupal core's breadcrumb trails functionality deeply buried into includes/menu.inc by moving it into a dedicated module, to be moved into core for D8.\nCo-authors + maintainers wanted.\nGoals\nExpose a block containing the breadcrumb.  Make it possible to spawn multiple blocks (configurations) for Panels (Everywhere) compatiblity.\nConfiguration options:\nOptional custom prefix; e.g., \"You are here:\" (none by default)\nSeparator character/string, if any. (» by default)\nWhether to include current page, optionally clickable. (disabled by default)\nConfigurable \"Home\" string.\nWhether to hide breadcrumb if it only contains \"Home\".\n\nMake it exportable.\nDefault to menu_get_active_breadcrumb() as data source, but allow to tie in other modules (such as Hansel breadcrumbs, Clickpath, or custom code)\nPurposively account for \"attached alike\" breadcrumb enhancements like a \"Back to last non-admin page\" link prefixed to the output, or a custom #pre_render that needs the entire menu link $tree for each link in $trail to convert each breadcrumb link into a dropdown link list providing access to sibling pages (like Crumbdown).\nConsider merging one or more of the following:\nMenu Breadcrumb\nMenu Trails\nCustom Breadcrumbs\nNode Trail\nTaxonomy Menu Trails\nTaxonomy Breadcrumb\nPrimary term / Primary Term to Active Menu Item\n...but stay within the common scope and constraints of Drupal core.\n\nMove this module into Drupal 8 core.\n",
+         "_snippetResult" : {
+            "body" : {
+               "matchLevel" : "full",
+               "value" : "code)\nPurposively <mark>a</mark>ccount for \"<mark>a</mark>ttached <mark>a</mark>like\" breadcrumb enhancements like <mark>a</mark>"
+            }
+         },
+         "url" : "https://www.drupal.org/project/breadcrumb",
+         "maintenance_status" : "Seeking co-maintainer(s)",
+         "author" : "sun",
+         "project_machine_name" : "breadcrumb"
+      },
+      {
+         "objectID" : "3232",
+         "category" : [
+            "Community"
+         ],
+         "_highlightResult" : {
+            "url" : {
+               "matchLevel" : "none",
+               "matchedWords" : [],
+               "value" : "https://www.drupal.org/project/chatbox"
+            },
+            "body" : {
+               "matchLevel" : "full",
+               "matchedWords" : [
+                  "a"
+               ],
+               "value" : "This is <mark>a</mark> simple chat module that <mark>a</mark>llows your site's visitors to chat in <mark>a</mark>n HTML/Javascript pop-up window. Registered users can invite other users to join the chat. No <mark>a</mark>dditional software is required. If you <mark>a</mark>re using Drupal 4.7 or higher, consider using the more <mark>a</mark>dvanced Chat Room module instead of Chat Box.\nRoad Map"
+            },
+            "title" : {
+               "matchLevel" : "none",
+               "matchedWords" : [],
+               "value" : "Chat Box"
+            }
+         },
+         "project_type" : "full",
+         "title" : "Chat Box",
+         "download_count" : "2048",
+         "maintenance_status" : "Unsupported",
+         "_snippetResult" : {
+            "body" : {
+               "value" : "<mark>a</mark> simple chat module that <mark>a</mark>llows your site's visitors",
+               "matchLevel" : "full"
+            }
+         },
+         "url" : "https://www.drupal.org/project/chatbox",
+         "body" : "This is a simple chat module that allows your site's visitors to chat in an HTML/Javascript pop-up window. Registered users can invite other users to join the chat. No additional software is required. If you are using Drupal 4.7 or higher, consider using the more advanced Chat Room module instead of Chat Box.\nRoad Map",
+         "development_status" : "Obsolete",
+         "project_machine_name" : "chatbox",
+         "author" : "Darren Oh"
+      },
+      {
+         "project_type" : "full",
+         "title" : "Event",
+         "download_count" : "112887",
+         "objectID" : "3238",
+         "_highlightResult" : {
+            "title" : {
+               "matchedWords" : [],
+               "value" : "Event",
+               "matchLevel" : "none"
+            },
+            "url" : {
+               "value" : "https://www.drupal.org/project/event",
+               "matchedWords" : [],
+               "matchLevel" : "none"
+            },
+            "body" : {
+               "matchedWords" : [
+                  "a"
+               ],
+               "value" : "This is <mark>a</mark> simple module to keep track of events <mark>a</mark>nd show them to users in various calendar displays. It <mark>a</mark>lso provides <mark>a</mark>n event <mark>A</mark>PI to <mark>a</mark>llow other modules to store <mark>a</mark>nd work with date data.\nThe 4.6 version of this module has been completely rewritten by <mark>A</mark>aron Welch.\nThe 5.2 version of this module has been completely rewritten by Gerhard Killesreiter.\nThe contrib directory includes basicevent module (obsolete <mark>a</mark>s from 5.2). Enabling this module gives you <mark>a</mark>n event node without having to use flexinode or CCK.\nCustom event types can be created using  CCK. <mark>A</mark>ny node type can be event-enabled by selecting this option on the content workflow page.\nWhy is there no stable version of event for Drupal 6?\nThere is <mark>a</mark>n unfortunate bug in the upgrade path from event 5 to 6. <mark>A</mark>ny help that helps to fix this is greatly <mark>a</mark>ppreciated.\nModules related to event include:\nEvent repeat: <mark>a</mark>llows you to create recurring events.\nRSVP: users can create <mark>a</mark>nd manage RSVPs <mark>a</mark>ssociated with events\nsignup: <mark>a</mark>llows you to signup enable\nevent views: <mark>a</mark>dds views module compatibility\nCalendar signup comes with event.module D6\nDate Picker comes with event.module D6\nPlease take some time to look <mark>a</mark>t the module's settings <mark>a</mark>nd read the documentation.",
+               "matchLevel" : "full"
+            }
+         },
+         "category" : [
+            "Event"
+         ],
+         "project_machine_name" : "event",
+         "author" : "killes@www.drop.org",
+         "_snippetResult" : {
+            "body" : {
+               "value" : "It <mark>a</mark>lso provides <mark>a</mark>n event <mark>A</mark>PI to <mark>a</mark>llow other modules",
+               "matchLevel" : "full"
+            }
+         },
+         "url" : "https://www.drupal.org/project/event",
+         "body" : "This is a simple module to keep track of events and show them to users in various calendar displays. It also provides an event API to allow other modules to store and work with date data.\nThe 4.6 version of this module has been completely rewritten by Aaron Welch.\nThe 5.2 version of this module has been completely rewritten by Gerhard Killesreiter.\nThe contrib directory includes basicevent module (obsolete as from 5.2). Enabling this module gives you an event node without having to use flexinode or CCK.\nCustom event types can be created using  CCK. Any node type can be event-enabled by selecting this option on the content workflow page.\nWhy is there no stable version of event for Drupal 6?\nThere is an unfortunate bug in the upgrade path from event 5 to 6. Any help that helps to fix this is greatly appreciated.\nModules related to event include:\nEvent repeat: allows you to create recurring events.\nRSVP: users can create and manage RSVPs associated with events\nsignup: allows you to signup enable\nevent views: adds views module compatibility\nCalendar signup comes with event.module D6\nDate Picker comes with event.module D6\nPlease take some time to look at the module's settings and read the documentation."
+      },
+      {
+         "project_type" : "full",
+         "download_count" : "6467",
+         "title" : "Checkmail",
+         "objectID" : "3233",
+         "_highlightResult" : {
+            "title" : {
+               "matchLevel" : "none",
+               "matchedWords" : [],
+               "value" : "Checkmail"
+            },
+            "url" : {
+               "matchedWords" : [],
+               "value" : "https://www.drupal.org/project/checkmail",
+               "matchLevel" : "none"
+            },
+            "body" : {
+               "matchLevel" : "full",
+               "value" : "The Checkmail module checks <mark>a</mark> POP3 or IMAP e-mail <mark>a</mark>ccount <mark>a</mark>nd prints one or more of the following: the total number of e-mail messages in your INBOX, the number of recent (new) e-mail messages (IMAP only), the number of unread e-mail messages (IMAP only), the total size of the e-mail messages in your mailbox. This module provides both <mark>a</mark> block <mark>a</mark>nd page for output.\nThis module can encrypt the login password(s), if you <mark>a</mark>re using either the <mark>A</mark>ES encryption (https://drupal.org/project/<mark>a</mark>es) or Encryption (https://drupal.org/project/encrypt) modules. If you choose not to use either of them, your passwords will not be encrypted, so that if your server is compromised, the <mark>a</mark>ttacker could have <mark>a</mark>ccess to your plaintext password(s).",
+               "matchedWords" : [
+                  "a"
+               ]
+            }
+         },
+         "category" : [],
+         "project_machine_name" : "checkmail",
+         "author" : "oadaeh",
+         "maintenance_status" : "Minimally maintained",
+         "url" : "https://www.drupal.org/project/checkmail",
+         "_snippetResult" : {
+            "body" : {
+               "value" : "compromised, the <mark>a</mark>ttacker could have <mark>a</mark>ccess to your plaintext password",
+               "matchLevel" : "full"
+            }
+         },
+         "body" : "The Checkmail module checks a POP3 or IMAP e-mail account and prints one or more of the following: the total number of e-mail messages in your INBOX, the number of recent (new) e-mail messages (IMAP only), the number of unread e-mail messages (IMAP only), the total size of the e-mail messages in your mailbox. This module provides both a block and page for output.\nThis module can encrypt the login password(s), if you are using either the AES encryption (https://drupal.org/project/aes) or Encryption (https://drupal.org/project/encrypt) modules. If you choose not to use either of them, your passwords will not be encrypted, so that if your server is compromised, the attacker could have access to your plaintext password(s).",
+         "development_status" : "Maintenance fixes only"
+      },
+      {
+         "project_type" : "full",
+         "title" : "Bbcode",
+         "download_count" : "38646",
+         "objectID" : "3224",
+         "_highlightResult" : {
+            "title" : {
+               "value" : "Bbcode",
+               "matchedWords" : [],
+               "matchLevel" : "none"
+            },
+            "url" : {
+               "value" : "https://www.drupal.org/project/bbcode",
+               "matchedWords" : [],
+               "matchLevel" : "none"
+            },
+            "body" : {
+               "matchLevel" : "full",
+               "matchedWords" : [
+                  "a"
+               ],
+               "value" : "The Drupal bbcode.module <mark>a</mark>dds <mark>a</mark> BBCode filter to Drupal. This <mark>a</mark>llows you to use HTML-like tags <mark>a</mark>s <mark>a</mark>n <mark>a</mark>lternative to HTML itself for <mark>a</mark>dding markup to your posts. BBCode is easier to use than HTML <mark>a</mark>nd helps to prevent malicious users from disrupting your site's formatting.\nSee the help screen of the module (or the code) for information on which tags <mark>a</mark>nd variants <mark>a</mark>re supported. This implementation is not necessarily the same <mark>a</mark>s the original BBCode implementation.\nNote that this filter <mark>a</mark>lso recognizes <mark>a</mark>nd converts URLs <mark>a</mark>nd email <mark>a</mark>ddresses to links <mark>a</mark>utomatically.\nThe quicktags module can be used in conjunction with this module to provide <mark>a</mark> BBCode formatting bar <mark>a</mark>bove <mark>a</mark>ll text <mark>a</mark>reas."
+            }
+         },
+         "category" : [
+            "Filters/Editors"
+         ],
+         "project_machine_name" : "bbcode",
+         "author" : "naudefj",
+         "maintenance_status" : "Seeking co-maintainer(s)",
+         "body" : "The Drupal bbcode.module adds a BBCode filter to Drupal. This allows you to use HTML-like tags as an alternative to HTML itself for adding markup to your posts. BBCode is easier to use than HTML and helps to prevent malicious users from disrupting your site's formatting.\nSee the help screen of the module (or the code) for information on which tags and variants are supported. This implementation is not necessarily the same as the original BBCode implementation.\nNote that this filter also recognizes and converts URLs and email addresses to links automatically.\nThe quicktags module can be used in conjunction with this module to provide a BBCode formatting bar above all text areas.",
+         "development_status" : "Maintenance fixes only",
+         "_snippetResult" : {
+            "body" : {
+               "matchLevel" : "full",
+               "value" : "<mark>a</mark>lso recognizes <mark>a</mark>nd converts URLs <mark>a</mark>nd email <mark>a</mark>ddresses to links"
+            }
+         },
+         "url" : "https://www.drupal.org/project/bbcode"
+      },
+      {
+         "body" : "Stable versions for drupal 5.x and drupal 6.x are now available.\nThis module allows a site administrator to list one or more ezmlm-managed mailing lists which site visitors can then subscribe to through either a block and/or page form as selected by the administrator.  The module sends the required subscribe message to the configured mailing list, and the subscription process proceeds in the normal fashion from that point.\nThe Ezmlm package is an easy-to-use, high-speed mailing list manager for qmail written by Dan J. Bernstein. It has all the basic functionality of a mailing list manager, such as subscriber address management including automated bounce handling as well as message distribution and archiving.\nThe current stable releases for D6 and D7 have the option of subscription lists on the registration page and the labels can be configured to be the name of the list or the list address.\nReferences:ezmlm – http://cr.yp.to/ezmlm.htmlezmlm at qmail – http://www.qmail.org/top.html#ezmlmqmail – http://www.qmail.org/\nezmlm was originally developed by Stéphane Couture, and was maintained by Chris Johnson and Allie Micka. It is now maintained by  Bob Hutchinson",
+         "url" : "https://www.drupal.org/project/ezmlm",
+         "_snippetResult" : {
+            "body" : {
+               "matchLevel" : "full",
+               "value" : "<mark>a</mark>utomated bounce handling <mark>a</mark>s well <mark>a</mark>s message distribution <mark>a</mark>nd <mark>a</mark>rchiving"
+            }
+         },
+         "maintenance_status" : "Actively maintained",
+         "author" : "hutch",
+         "project_machine_name" : "ezmlm",
+         "category" : [
+            "Mail"
+         ],
+         "_highlightResult" : {
+            "title" : {
+               "matchedWords" : [],
+               "value" : "Ezmlm",
+               "matchLevel" : "none"
+            },
+            "body" : {
+               "matchedWords" : [
+                  "a"
+               ],
+               "value" : "Stable versions for drupal 5.x <mark>a</mark>nd drupal 6.x <mark>a</mark>re now <mark>a</mark>vailable.\nThis module <mark>a</mark>llows <mark>a</mark> site <mark>a</mark>dministrator to list one or more ezmlm-managed mailing lists which site visitors can then subscribe to through either <mark>a</mark> block <mark>a</mark>nd/or page form <mark>a</mark>s selected by the <mark>a</mark>dministrator.  The module sends the required subscribe message to the configured mailing list, <mark>a</mark>nd the subscription process proceeds in the normal fashion from that point.\nThe Ezmlm package is <mark>a</mark>n easy-to-use, high-speed mailing list manager for qmail written by Dan J. Bernstein. It has <mark>a</mark>ll the basic functionality of <mark>a</mark> mailing list manager, such <mark>a</mark>s subscriber <mark>a</mark>ddress management including <mark>a</mark>utomated bounce handling <mark>a</mark>s well <mark>a</mark>s message distribution <mark>a</mark>nd <mark>a</mark>rchiving.\nThe current stable releases for D6 <mark>a</mark>nd D7 have the option of subscription lists on the registration page <mark>a</mark>nd the labels can be configured to be the name of the list or the list <mark>a</mark>ddress.\nReferences:ezmlm – http://cr.yp.to/ezmlm.htmlezmlm <mark>a</mark>t qmail – http://www.qmail.org/top.html#ezmlmqmail – http://www.qmail.org/\nezmlm was originally developed by Stéphane Couture, <mark>a</mark>nd was maintained by Chris Johnson <mark>a</mark>nd <mark>A</mark>llie Micka. It is now maintained by  Bob Hutchinson",
+               "matchLevel" : "full"
+            },
+            "url" : {
+               "matchLevel" : "none",
+               "value" : "https://www.drupal.org/project/ezmlm",
+               "matchedWords" : []
+            }
+         },
+         "objectID" : "3240",
+         "title" : "Ezmlm",
+         "download_count" : "9068",
+         "project_type" : "full"
+      },
+      {
+         "objectID" : "3247",
+         "category" : [
+            "Content Display",
+            "Third-party Integration"
+         ],
+         "_highlightResult" : {
+            "url" : {
+               "matchLevel" : "none",
+               "matchedWords" : [],
+               "value" : "https://www.drupal.org/project/gallery"
+            },
+            "body" : {
+               "matchLevel" : "full",
+               "matchedWords" : [
+                  "a"
+               ],
+               "value" : "This module embeds Gallery2 (http://gallery.menalto.com) inside your Drupal installation to support photos, videos <mark>a</mark>nd other content. There is support for 2 types of image blocks <mark>a</mark>nd <mark>a</mark> navigation menu, inserting of images into nodes via <mark>a</mark>n input filter, TinyMCE support, syncing of users between the 2 <mark>a</mark>pplications, ...\nNote that you will need to download <mark>a</mark>nd install Gallery2 (http://gallery.menalto.com/downloads) prior to installing this module.\nYou can see the module in <mark>a</mark>ction on Gallery's own website <mark>a</mark>t: http://gallery.menalto.com/gallery.\nPlease post bug reports <mark>a</mark>nd feature requests in the Issues tracker, support requests should generally go to the Gallery 2 Integrations Forums first. You may <mark>a</mark>lso check the Gallery2 Integration group for latest news <mark>a</mark>nd discussion on the module.\nNews &amp; Updates\n<mark>A</mark> development version of gallery module for Drupal 6 is now <mark>a</mark>vailable! It <mark>a</mark>lready contains <mark>a</mark>ll the features targeted for this series. Please note that the D6 module requires the G2.3/svn version of Gallery2.\nPeople have <mark>a</mark>sked how to support development of the Gallery 2 integration in Drupal. They explicitly <mark>a</mark>sked for <mark>a</mark> ChipIn fund to support me monetarily. But <mark>a</mark>lso consider - even <mark>a</mark>s <mark>a</mark> non-developer - to contribute documentation <mark>a</mark>nd/or help on the forums, so that I can focus on coding instead."
+            },
+            "title" : {
+               "matchLevel" : "none",
+               "value" : "Gallery",
+               "matchedWords" : []
+            }
+         },
+         "project_type" : "full",
+         "download_count" : "84021",
+         "title" : "Gallery",
+         "maintenance_status" : "Seeking new maintainer",
+         "url" : "https://www.drupal.org/project/gallery",
+         "_snippetResult" : {
+            "body" : {
+               "value" : "But <mark>a</mark>lso consider - even <mark>a</mark>s <mark>a</mark> non-developer - to contribute",
+               "matchLevel" : "full"
+            }
+         },
+         "body" : "This module embeds Gallery2 (http://gallery.menalto.com) inside your Drupal installation to support photos, videos and other content. There is support for 2 types of image blocks and a navigation menu, inserting of images into nodes via an input filter, TinyMCE support, syncing of users between the 2 applications, ...\nNote that you will need to download and install Gallery2 (http://gallery.menalto.com/downloads) prior to installing this module.\nYou can see the module in action on Gallery's own website at: http://gallery.menalto.com/gallery.\nPlease post bug reports and feature requests in the Issues tracker, support requests should generally go to the Gallery 2 Integrations Forums first. You may also check the Gallery2 Integration group for latest news and discussion on the module.\nNews &amp; Updates\nA development version of gallery module for Drupal 6 is now available! It already contains all the features targeted for this series. Please note that the D6 module requires the G2.3/svn version of Gallery2.\nPeople have asked how to support development of the Gallery 2 integration in Drupal. They explicitly asked for a ChipIn fund to support me monetarily. But also consider - even as a non-developer - to contribute documentation and/or help on the forums, so that I can focus on coding instead.",
+         "development_status" : "No further development",
+         "project_machine_name" : "gallery",
+         "author" : "profix898"
+      },
+      {
+         "category" : [],
+         "_highlightResult" : {
+            "url" : {
+               "value" : "https://www.drupal.org/project/file",
+               "matchedWords" : [],
+               "matchLevel" : "none"
+            },
+            "body" : {
+               "matchLevel" : "full",
+               "matchedWords" : [
+                  "a"
+               ],
+               "value" : "This project was the testing grounds for the Drupal 7 File module, which is the successor to FileField <mark>a</mark>nd Upload modules.\nThis module was committed in #391330: File Field for Core to Drupal core. So there's no need to ever download this package. Previously, file.module was <mark>a</mark> precursor to Upload module in Drupal 4.0.\n"
+            },
+            "title" : {
+               "value" : "File",
+               "matchedWords" : [],
+               "matchLevel" : "none"
+            }
+         },
+         "objectID" : "3243",
+         "title" : "File",
+         "download_count" : "667",
+         "project_type" : "full",
+         "body" : "This project was the testing grounds for the Drupal 7 File module, which is the successor to FileField and Upload modules.\nThis module was committed in #391330: File Field for Core to Drupal core. So there's no need to ever download this package. Previously, file.module was a precursor to Upload module in Drupal 4.0.\n",
+         "development_status" : "Obsolete",
+         "_snippetResult" : {
+            "body" : {
+               "matchLevel" : "full",
+               "value" : "package. Previously, file.module was <mark>a</mark> precursor to Upload module"
+            }
+         },
+         "url" : "https://www.drupal.org/project/file",
+         "author" : "Unsupported Projects",
+         "project_machine_name" : "file"
+      },
+      {
+         "maintenance_status" : "Seeking new maintainer",
+         "url" : "https://www.drupal.org/project/bookmarks",
+         "_snippetResult" : {
+            "body" : {
+               "value" : "<mark>a</mark>dded to <mark>a</mark>ll new users <mark>a</mark>nd preset bookmarks which <mark>a</mark>re",
+               "matchLevel" : "full"
+            }
+         },
+         "body" : "Maintainer Needed: https://d4l3.com/blogs/darthclue/entries/maintainer-needed\n16 Jan 2012 -\nThe features provided by the Bookmarks module are being consolidated into the Advanced Menu Module. This is being done as both of these modules override the core menu module to permit non-admin users access to menu functions which form the core of both the Advanced Menu and Bookmarks modules.\nI am presently working on the final touches of the converter code which will convert your Bookmarks installs into Advanced Menu installs. This conversion will work for D6 -&gt; D6 and D6 -&gt; D7 conversions.\nI expect to have this ready soon.\nWhat is the Bookmarks module?\nBookmarks provides a unique (non-shared) menu to each user. The menu can be modified / updated by the individual users and by the site admin (or anyone who has those permissions).  Bookmarks can also be made public and they will appear on the user profile page.  For example, user 1 would have public bookmarks at bookmarks/public/1.\nThe dependency on DHTML Menus has been removed with the 6.x-2.x series.  The latest release of DHTML Menus interfaces directly with the menu system.  The module will continue to function without DHTML Menus but all folders will always be expanded.  To get collapsible folders you will need to install a module that provides this.  DHTML is known to work with this module.\nYou can now specify default bookmarks which will be added to all new users and preset bookmarks which are bookmarks that are defined by the system administrator and can later be added by the user.  For example:\nThe site admin defines a group of presets (\n--Drupal\n----Handbook\n----Patch Spotlight\n----Groups\nInstead of the user having to create this same group they can go to the presets tab and select add folder to have this group added to their bookmarks.\nPatches/code/feedback is always welcomed.\nPlease be sure to read the release notes as they will contain important information about the changes being made.\nThis project sponsored by Brain Heist.",
+         "development_status" : "Under active development",
+         "project_machine_name" : "bookmarks",
+         "objectID" : "3228",
+         "_highlightResult" : {
+            "url" : {
+               "matchedWords" : [],
+               "value" : "https://www.drupal.org/project/bookmarks",
+               "matchLevel" : "none"
+            },
+            "body" : {
+               "value" : "Maintainer Needed: https://d4l3.com/blogs/darthclue/entries/maintainer-needed\n16 Jan 2012 -\nThe features provided by the Bookmarks module <mark>a</mark>re being consolidated into the <mark>A</mark>dvanced Menu Module. This is being done <mark>a</mark>s both of these modules override the core menu module to permit non-<mark>a</mark>dmin users <mark>a</mark>ccess to menu functions which form the core of both the <mark>A</mark>dvanced Menu <mark>a</mark>nd Bookmarks modules.\nI <mark>a</mark>m presently working on the final touches of the converter code which will convert your Bookmarks installs into <mark>A</mark>dvanced Menu installs. This conversion will work for D6 -&gt; D6 <mark>a</mark>nd D6 -&gt; D7 conversions.\nI expect to have this ready soon.\nWhat is the Bookmarks module?\nBookmarks provides <mark>a</mark> unique (non-shared) menu to each user. The menu can be modified / updated by the individual users <mark>a</mark>nd by the site <mark>a</mark>dmin (or <mark>a</mark>nyone who has those permissions).  Bookmarks can <mark>a</mark>lso be made public <mark>a</mark>nd they will <mark>a</mark>ppear on the user profile page.  For example, user 1 would have public bookmarks <mark>a</mark>t bookmarks/public/1.\nThe dependency on DHTML Menus has been removed with the 6.x-2.x series.  The latest release of DHTML Menus interfaces directly with the menu system.  The module will continue to function without DHTML Menus but <mark>a</mark>ll folders will <mark>a</mark>lways be expanded.  To get collapsible folders you will need to install <mark>a</mark> module that provides this.  DHTML is known to work with this module.\nYou can now specify default bookmarks which will be <mark>a</mark>dded to <mark>a</mark>ll new users <mark>a</mark>nd preset bookmarks which <mark>a</mark>re bookmarks that <mark>a</mark>re defined by the system <mark>a</mark>dministrator <mark>a</mark>nd can later be <mark>a</mark>dded by the user.  For example:\nThe site <mark>a</mark>dmin defines <mark>a</mark> group of presets (\n--Drupal\n----Handbook\n----Patch Spotlight\n----Groups\nInstead of the user having to create this same group they can go to the presets tab <mark>a</mark>nd select <mark>a</mark>dd folder to have this group <mark>a</mark>dded to their bookmarks.\nPatches/code/feedback is <mark>a</mark>lways welcomed.\nPlease be sure to read the release notes <mark>a</mark>s they will contain important information <mark>a</mark>bout the changes being made.\nThis project sponsored by Brain Heist.",
+               "matchedWords" : [
+                  "a"
+               ],
+               "matchLevel" : "full"
+            },
+            "title" : {
+               "matchedWords" : [],
+               "value" : "Bookmarks",
+               "matchLevel" : "none"
+            }
+         },
+         "category" : [],
+         "project_type" : "full",
+         "download_count" : "21362",
+         "title" : "Bookmarks"
+      },
+      {
+         "url" : "https://www.drupal.org/project/devel",
+         "_snippetResult" : {
+            "body" : {
+               "matchLevel" : "full",
+               "value" : "<mark>a</mark>nd more.\nWebProfiler (D8+)\n<mark>A</mark>dd <mark>a</mark> powerful footer to <mark>a</mark>ll"
+            }
+         },
+         "development_status" : "Under active development",
+         "body" : "For Drupal 8, the query log has been moved to the webprofiler module which is now its own module within this project.\nA suite of modules containing fun for module developers and themers ...\nDevel\nHelper functions for Drupal developers and inquisitive admins.\nEnable the included Kint submodule as for pretty print of variables. kint($array) function is provided, which pretty prints arrays. Useful during development. Similarly, a ddebug_backtrace() is offerred.\nmuch more. See this helpful demo page.\nGenerate content\nAccelerate development of your site or module by quickly generating nodes, comments, terms, users, and more.\nWebProfiler (D8+)\nAdd a powerful footer to all pages of your site. There, admins can review resource utilization, cache effectiveness, database queries, Views, and so much more. Sponsored by Wellnet\nDevel Node Access (DNA)\nView the node access entries for the node(s) that are shown on a page. Essential for developers of node access modules and useful for site admins in debugging problems with those modules.",
+         "maintenance_status" : "Actively maintained",
+         "author" : "moshe weitzman",
+         "project_machine_name" : "devel",
+         "_highlightResult" : {
+            "title" : {
+               "matchLevel" : "none",
+               "matchedWords" : [],
+               "value" : "Devel"
+            },
+            "body" : {
+               "matchedWords" : [
+                  "a"
+               ],
+               "value" : "For Drupal 8, the query log has been moved to the webprofiler module which is now its own module within this project.\n<mark>A</mark> suite of modules containing fun for module developers <mark>a</mark>nd themers ...\nDevel\nHelper functions for Drupal developers <mark>a</mark>nd inquisitive <mark>a</mark>dmins.\nEnable the included Kint submodule <mark>a</mark>s for pretty print of variables. kint($array) function is provided, which pretty prints <mark>a</mark>rrays. Useful during development. Similarly, <mark>a</mark> ddebug_backtrace() is offerred.\nmuch more. See this helpful demo page.\nGenerate content\n<mark>A</mark>ccelerate development of your site or module by quickly generating nodes, comments, terms, users, <mark>a</mark>nd more.\nWebProfiler (D8+)\n<mark>A</mark>dd <mark>a</mark> powerful footer to <mark>a</mark>ll pages of your site. There, <mark>a</mark>dmins can review resource utilization, cache effectiveness, database queries, Views, <mark>a</mark>nd so much more. Sponsored by Wellnet\nDevel Node <mark>A</mark>ccess (DNA)\nView the node <mark>a</mark>ccess entries for the node(s) that <mark>a</mark>re shown on <mark>a</mark> page. Essential for developers of node <mark>a</mark>ccess modules <mark>a</mark>nd useful for site <mark>a</mark>dmins in debugging problems with those modules.",
+               "matchLevel" : "full"
+            },
+            "url" : {
+               "matchLevel" : "none",
+               "value" : "https://www.drupal.org/project/devel",
+               "matchedWords" : []
+            }
+         },
+         "category" : [
+            "Administration",
+            "Developer",
+            "Drush",
+            "Utility"
+         ],
+         "objectID" : "3236",
+         "title" : "Devel",
+         "download_count" : "3012492",
+         "project_type" : "full"
+      }
+   ],
+   "hierarchicalFacets" : [],
+   "disjunctiveFacets" : [],
+   "hitsPerPage" : 20,
+   "nbPages" : 1
+}

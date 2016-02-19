@@ -4,11 +4,7 @@
   'use strict';
   var app = {
     client: null,
-    // index: null,
     helper: null,
-
-    // facetFilters: {},
-    // query: '',
 
     searchBox: null,
 
@@ -18,11 +14,18 @@
     searchResultTemplate: null,
     searchFacetTemplate: null,
 
+    facetMap: {
+      author: 'Authors',
+      category: 'Categories',
+      maintenance_status: 'Maintenance Status',
+      development_status: 'Development Status',
+      project_type: 'Project Type'
+    },
+
     init: function() {
       this.client = algoliasearch('A644RMPSD6', '392ee956e285f537ee958f9f395c0253');
-      // this.index = this.client.initIndex('prod_drupal_modules');
       this.helper = algoliasearchHelper(this.client, 'prod_drupal_modules', {
-        facets: ['author', 'category', 'maintenance_status', 'development_status', 'project_type']
+        facets: Object.keys(this.facetMap)
       });
       this.helper.on('result', this.handleResults);
 
@@ -39,8 +42,6 @@
         var $item = $(e.currentTarget);
         var key = $item.data('facet-key');
         var value = $item.data('facet-value');
-        // app.facetFilters[key] = value;
-        // app.search(app.query);
         app.helper.setPage(0);
         app.helper.toggleRefine(key, value).search();
       });
@@ -49,20 +50,21 @@
 
       this.searchBox.on('keyup', function(e) {
         if (e.currentTarget.value !== '') {
-          // app.search(e.currentTarget.value);
           app.helper.setQuery(e.currentTarget.value).search();
         }
         else {
           app.searchResultsContainer.empty();
         }
       });
+
+      $.getJSON('/scripts/example.json', function(data) {
+        app.handleResults(data);
+      });
     },
 
     handleResults: function(results) {
       app.searchResultsContainer.empty();
       app.searchFacetsContainer.empty();
-
-      console.log(results);
 
       app.searchSummaryContainer.html(
         app.searchSummaryTemplate({
@@ -79,7 +81,8 @@
 
       $.each(results.facets, function(i, facet) {
         var data = {
-          name: facet.name,
+          key: facet.name,
+          name: app.facetMap[facet.name],
           items: [],
           isRefined: false
         };
@@ -104,4 +107,8 @@
 
   app.init();
 
+  $('#menu-toggle').click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
 })(jQuery, Handlebars, algoliasearch);
