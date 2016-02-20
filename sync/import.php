@@ -21,10 +21,7 @@ $max_pages = 800;
 
 $page = 0;
 do {
-  $res = $api->getNodes($page, 2);
-
-  $data = json_decode($res->getBody());
-  // print_r($data);
+  $data = $api->getProjects($page, 10);
 
   $batch = [];
   foreach ($data->list as $node) {
@@ -35,7 +32,8 @@ do {
       'url' => $node->url,
       'project_type' => $node->field_project_type,
       'project_machine_name' => $node->field_project_machine_name,
-      'download_count' => $node->field_download_count,
+      'download_count' => intval($node->field_download_count),
+      'compatibility' => [],
     ];
 
     if (property_exists($node, 'taxonomy_vocabulary_44')) {
@@ -76,10 +74,14 @@ do {
       }
     }
 
-    // print_r($obj);
+    foreach (['5.x', '6.x', '7.x', '8.x'] as $core) {
+      if ($api->checkRelease($node->field_project_machine_name, $core)) {
+        $obj['compatibility'][] = $core;
+      }
+    }
+
     $batch[] = $obj;
   }
-
 
   $index->addObjects($batch);
 

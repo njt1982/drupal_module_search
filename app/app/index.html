@@ -11,6 +11,7 @@
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/components-font-awesome/css/font-awesome.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -67,8 +68,7 @@
             </div>
 
             <div class="col-lg-12">
-
-              <div id="searchResults"></div>
+              <div id="searchResults"><p>Lets do a search!</p></div>
               <div id="pager"></div>
             </div>
           </div>
@@ -92,8 +92,27 @@
   <script id="searchResultTemplate" type="text/x-handlebars-template">
     <div class="result">
       <h3><a href="{{ url }}">{{title}}</a></h3>
+      <p class="small">
+        <span class="url"><a href="{{ url }}">{{url}}</a></span>
+      </p>
+      <p>
+        {{#if author}}<span class="label label-default"><i class="fa fa-user"></i> {{ author }}</span>{{/if}}
+        {{#if download_count}}<span class="label label-default"><i class="fa fa-download"></i> {{ download_count }}</span>{{/if}}
+        {{#if maintenance_status}}<span class="label label-default"><i class="fa fa-cog"></i> {{ maintenance_status }}</span>{{/if}}
+        {{#if development_status}}<span class="label label-default"><i class="fa fa-code"></i> {{ development_status }}</span>{{/if}}
+      </p>
       <p class="body">
         {{{ _snippetResult.body.value }}}
+      </p>
+      <p>
+        {{#category}}
+        <span class="label label-info"><i class="fa fa-tag"></i> {{ this }}</span>
+        {{/category}}
+      </p>
+      <p>
+        {{#compatibility}}
+        <span class="label primary"><i class="fa fa-code-fork"></i> {{ this }}</span>
+        {{/compatibility}}
       </p>
     </div>
   </script>
@@ -111,7 +130,7 @@
       <div id="collapse_{{key}}" class="panel-collapse{{#unless isRefined}} collapse{{/unless}}" role="tabpanel" aria-labelledby="heading_{{key}}">
         <ul class="list-group pre-scrollable">
           {{#each items}}
-          <li class="{{#refined}}refined{{/refined}} list-group-item" data-facet-key="{{ ../name }}" data-facet-value="{{ name }}">
+          <li class="{{#refined}}refined{{/refined}} list-group-item" data-facet-key="{{ ../key }}" data-facet-value="{{ name }}">
             <div class="value">{{ name }}</div>
             <span class="badge">{{ count }}</span>
           </li>
@@ -162,7 +181,10 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           </div>
           <div class="modal-body">
-            <p>This site aggregates data from Drupal.org and is kindly powered by <img src="images/Algolia_logo_bg-white.svg" style="height: 1em" />.</p>
+            <p>This site wouldn't be possible without the following technologies:</p>
+            <div style="font-size: 3em">
+              <img src="images/Algolia_logo_bg-white.svg" style="height: 1em" />
+            </div>
           </div>
         </div>
     </div>

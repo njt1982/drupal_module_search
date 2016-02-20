@@ -16,6 +16,7 @@
 
     facetMap: {
       author: 'Authors',
+      compatibility: 'Compatibility',
       category: 'Categories',
       maintenance_status: 'Maintenance Status',
       development_status: 'Development Status',
@@ -55,10 +56,6 @@
         else {
           app.searchResultsContainer.empty();
         }
-      });
-
-      $.getJSON('/scripts/example.json', function(data) {
-        app.handleResults(data);
       });
     },
 

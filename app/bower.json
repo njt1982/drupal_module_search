@@ -6,7 +6,8 @@
     "modernizr": "~2.8.1",
     "algoliasearch": "3",
     "handlebars": "^4.0.5",
-    "algoliasearch-helper": "^2.9.0"
+    "algoliasearch-helper": "^2.9.0",
+    "components-font-awesome": "^4.5.0"
   },
   "overrides": {
     "bootstrap-sass": {

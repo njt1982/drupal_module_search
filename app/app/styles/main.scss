@@ -2,6 +2,7 @@ $icon-font-path: '../fonts/';
 
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "bower_components/components-font-awesome/scss/font-awesome.scss";
 // endbower
 
 @import "sidebar";
@@ -43,5 +44,15 @@ $icon-font-path: '../fonts/';
   font-size: 2em;
   &:focus {
     outline: 0;
+  }
+}
+
+.result {
+  margin:0 0 20px;
+  padding: 0 0 20px;
+  border-bottom: 1px solid $gray-lighter;
+  p.body {
+    font-style: italic;
+    color: $gray-light;
   }
 }

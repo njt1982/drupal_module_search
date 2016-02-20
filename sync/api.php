@@ -12,28 +12,53 @@ class DrupalApi {
     ]);
   }
 
-  public function getNodes($page = 0, $limit = 50, $type = 'project_module', $status = 1) {
-    return $this->client->request('GET', 'node.json', [
-      'query' => [
-        'type' => $type,
-        'status' => $status,
-        'limit' => $limit,
+  public function getNodes($page, $extra = []) {
+    return $this->get('node.json', [
+      'query' => array_filter([
         'page' => $page,
-      ]
+      ] + $extra)
     ]);
   }
 
   public function getTerm($tid) {
+    // Exclude known tids that dont exist anymore.
+    switch ($tid) {
+      case 14:
+        return FALSE;
+    }
+
     return $this->get("taxonomy_term/{$tid}.json");
   }
+  // @todo - get terms in a batch
+  // https://www.drupal.org/api-d7/taxonomy_term.json?tid[]=55&tid[]=104
 
   public function getUser($uid) {
     return $this->get("user/{$uid}.json");
   }
 
+  public function getProjects($page, $limit) {
+    return $this->getNodes($page, ['limit' => $limit, 'status' => 1, 'type' => 'project_module']);
+  }
 
-  protected function get($url) {
-    $cache_path = 'cache/' . md5($url);
+//  public function getReleases($nid) {
+//    return $this->getNodes(0, ['type' => 'project_release', 'status' => 1, 'field_release_project' => $nid]);
+//  }
+
+  public function checkRelease($module, $core) {
+    $res = $this->client->request(
+      'GET',
+      'https://updates.drupal.org/release-history/' . $module . '/' . $core
+    );
+
+    return strpos((string)$res->getBody(), '<project_status>published</project_status>') !== FALSE;
+  }
+
+  protected function get($url, $options = []) {
+    $key = $url;
+    if (!empty($options)) {
+      $key .= '-' . json_encode($options);
+    }
+    $cache_path = 'cache/' . md5($key);
 
     if (isset($this->cache[$cache_path])) {
       return $this->cache[$cache_path];
@@ -43,7 +68,7 @@ class DrupalApi {
       $this->cache[$cache_path] = json_decode(file_get_contents($cache_path));
     }
     else {
-      $res = $this->client->request('GET', $url);
+      $res = $this->client->request('GET', $url, $options);
       file_put_contents($cache_path, $res->getBody());
       $this->cache[$cache_path] = json_decode($res->getBody());
     }
