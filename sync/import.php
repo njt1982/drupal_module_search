@@ -22,11 +22,12 @@ $api = new DrupalApi();
 $max_pages = 800;
 $page = 0;
 do {
-  echo "Getting page: {$page}... ";
+  echo "Getting page: {$page} ";
   $data = $api->getProjects($page, $limit);
 
   $batch = [];
   foreach ($data->list as $node) {
+    echo ".";
     $obj = [
       'objectID' => $node->nid,
       'title' => $node->title,

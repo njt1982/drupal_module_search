@@ -45,15 +45,11 @@ class DrupalApi {
 //  }
 
   public function checkRelease($module, $core) {
-    $res = $this->client->request(
-      'GET',
-      'https://updates.drupal.org/release-history/' . $module . '/' . $core
-    );
-
-    return strpos((string)$res->getBody(), '<project_status>published</project_status>') !== FALSE;
+    $data = $this->get('https://updates.drupal.org/release-history/' . $module . '/' . $core, [], FALSE);
+    return strpos($data, '<project_status>published</project_status>') !== FALSE;
   }
 
-  protected function get($url, $options = []) {
+  protected function get($url, $options = [], $is_json = TRUE) {
     $key = $url;
     if (!empty($options)) {
       $key .= '-' . json_encode($options);
@@ -65,13 +61,15 @@ class DrupalApi {
     }
 
     if (file_exists($cache_path)) {
-      $this->cache[$cache_path] = json_decode(file_get_contents($cache_path));
+      $data = file_get_contents($cache_path);;
     }
     else {
       $res = $this->client->request('GET', $url, $options);
-      file_put_contents($cache_path, $res->getBody());
-      $this->cache[$cache_path] = json_decode($res->getBody());
+      $data = (string)$res->getBody();
+      file_put_contents($cache_path, $data);
     }
+
+    $this->cache[$cache_path] = $is_json ? json_decode($data) : $data;
 
     return $this->cache[$cache_path];
   }
