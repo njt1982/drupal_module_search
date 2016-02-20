@@ -8,6 +8,9 @@ if (empty($algolia_key)) {
   exit;
 }
 
+$limit = getenv('limit') ?: 10;
+echo "Importing at {$limit} per page.\n";
+
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/api.php';
 
@@ -16,12 +19,11 @@ $index = $algolia->initIndex('prod_drupal_modules');
 
 $api = new DrupalApi();
 
-
 $max_pages = 800;
-
 $page = 0;
 do {
-  $data = $api->getProjects($page, 10);
+  echo "Getting page: {$page}... ";
+  $data = $api->getProjects($page, $limit);
 
   $batch = [];
   foreach ($data->list as $node) {
