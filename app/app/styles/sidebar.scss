@@ -160,3 +160,13 @@ $collapsed-size: 64px;
     }
   }
 }
+
+
+.poweredby {
+  img {
+    height: 1em;
+  }
+  a {
+    color: $gray-lighter;
+  }
+}
