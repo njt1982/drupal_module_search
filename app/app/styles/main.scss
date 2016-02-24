@@ -9,6 +9,7 @@ $icon-font-path: '../fonts/';
 
 body {
   background-color: $gray-lighter;
+  font-family: 'Droid Sans', sans-serif;
 }
 
 .browserupgrade {
@@ -59,9 +60,13 @@ body {
   box-shadow: 0 1px 3px #aaa;
   h3 {
     margin-top: 0;
+    font-weight: bold;
   }
   p.body {
     font-style: italic;
     color: $gray-light;
+  }
+  .label {
+    font-weight: normal;
   }
 }
