@@ -1,4 +1,4 @@
-/*global jQuery:false Handlebars:false algoliasearch:false algoliasearchHelper:false */
+/*global jQuery:false Handlebars:false algoliasearch:false algoliasearchHelper:false ga:false */
 
 (function($, Handlebars, algoliasearch) {
   'use strict';
@@ -52,7 +52,7 @@
       this.searchBox.on('keyup', function(e) {
         if (e.currentTarget.value !== '') {
           app.helper.setQuery(e.currentTarget.value).search();
-          app.eventTrack('searchbox', 'search', e.currentTarget.value)
+          app.eventTrack('searchbox', 'search', e.currentTarget.value);
         }
         else {
           app.searchResultsContainer.empty();
@@ -61,7 +61,7 @@
     },
 
     eventTrack: function(category, action, label, value) {
-      if (typeof(ga) !== 'undefined') {
+      if (typeof (ga) !== 'undefined') {
         ga('send', 'event', category, action, label, value);
       }
     },
