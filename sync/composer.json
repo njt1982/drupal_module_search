@@ -3,7 +3,8 @@
     "description": "Sync Drupal Modules to Algolia",
     "require": {
         "algolia/algoliasearch-client-php": "^1.7",
-        "guzzlehttp/guzzle": "^6.1"
+        "guzzlehttp/guzzle": "^6.1",
+        "vlucas/phpdotenv": "^2.4"
     },
     "authors": [
         {

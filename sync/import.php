@@ -1,22 +1,34 @@
 #!/usr/bin/env php
 <?php
 
-$algolia_key = getenv('algolia_key');
+require __DIR__ . '/vendor/autoload.php';
 
-if (empty($algolia_key)) {
-  echo "No Algolia key. Please export one.\n";
+$dotenv = new Dotenv\Dotenv(__DIR__);
+$dotenv->load();
+
+try {
+  $dotenv->required(['ALGOLIA_KEY', 'ALGOLIA_APP_ID', 'ALGOLIA_INDEX'])->notEmpty();
+}
+catch(Dotenv\Exception\ValidationException $e) {
+  echo $e->getMessage();
   exit;
 }
+
+
+$algolia_key = getenv('ALGOLIA_KEY');
+$algolia_app_id = getenv('ALGOLIA_APP_ID');
+$algolia_index = getenv('ALGOLIA_INDEX');
+
 
 $limit = getenv('limit') ?: 10;
 echo "Importing at {$limit} per page.\n";
 
-require __DIR__ . '/vendor/autoload.php';
+
+$algolia = new \AlgoliaSearch\Client($algolia_app_id, $algolia_key);
+$index = $algolia->initIndex($algolia_index);
+
+
 require __DIR__ . '/api.php';
-
-$algolia = new \AlgoliaSearch\Client('A644RMPSD6', $algolia_key);
-$index = $algolia->initIndex('prod_drupal_modules');
-
 $api = new DrupalApi();
 
 $max_pages = 800;
