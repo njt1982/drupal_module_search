@@ -1,0 +1,12 @@
+language: php
+sudo: false
+php:
+  - '5.6'
+cache:
+  directories:
+  - sync/cache
+
+before_script:
+  - cd sync
+  - composer self-update
+  - composer install --prefer-source --no-interaction --dev
