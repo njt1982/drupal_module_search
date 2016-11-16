@@ -3,15 +3,17 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-$dotenv = new Dotenv\Dotenv(__DIR__);
-$dotenv->load();
-
 try {
+  $dotenv = new Dotenv\Dotenv(__DIR__);
+  $dotenv->load();
   $dotenv->required(['ALGOLIA_KEY', 'ALGOLIA_APP_ID', 'ALGOLIA_INDEX'])->notEmpty();
 }
 catch(Dotenv\Exception\ValidationException $e) {
   echo $e->getMessage();
   exit;
+}
+catch(Dotenv\Exception\InvalidPathException $e) {
+  echo $e->getMessage();
 }
 
 
