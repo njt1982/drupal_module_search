@@ -2,6 +2,7 @@
     "name": "drupalindex/sync",
     "description": "Sync Drupal Modules to Elastic",
     "require": {
+        "elasticsearch/elasticsearch": "~6.0",
         "guzzlehttp/guzzle": "^6.1",
         "vlucas/phpdotenv": "^2.4"
     },
