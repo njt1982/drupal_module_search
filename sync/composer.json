@@ -1,8 +1,7 @@
 {
     "name": "drupalindex/sync",
-    "description": "Sync Drupal Modules to Algolia",
+    "description": "Sync Drupal Modules to Elastic",
     "require": {
-        "algolia/algoliasearch-client-php": "^1.7",
         "guzzlehttp/guzzle": "^6.1",
         "vlucas/phpdotenv": "^2.4"
     },
