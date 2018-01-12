@@ -6,7 +6,7 @@ require __DIR__ . '/vendor/autoload.php';
 try {
   $dotenv = new Dotenv\Dotenv(__DIR__);
   $dotenv->load();
-  $dotenv->required(['ALGOLIA_KEY', 'ALGOLIA_APP_ID', 'ALGOLIA_INDEX'])->notEmpty();
+  $dotenv->required(['ELASTIC_HOST', 'ELASTIC_USERNAME', 'ELASTIC_PASSWORD', 'ELASTIC_INDEX'])->notEmpty();
 }
 catch(Dotenv\Exception\ValidationException $e) {
   echo $e->getMessage();
@@ -16,34 +16,42 @@ catch(Dotenv\Exception\InvalidPathException $e) {
   echo $e->getMessage();
 }
 
-
-$algolia_key = getenv('ALGOLIA_KEY');
-$algolia_app_id = getenv('ALGOLIA_APP_ID');
-$algolia_index = getenv('ALGOLIA_INDEX');
-
+$elastic_host = getenv('ELASTIC_HOST');
+$elastic_username = getenv('ELASTIC_USERNAME');
+$elastic_password = getenv('ELASTIC_PASSWORD');
+$elastic_index = getenv('ELASTIC_INDEX');
 
 $limit = getenv('limit') ?: 10;
 echo "Importing at {$limit} per page.\n";
 
-
-$algolia = new \AlgoliaSearch\Client($algolia_app_id, $algolia_key);
-$index = $algolia->initIndex($algolia_index);
+$client = Elasticsearch\ClientBuilder::create()
+  ->setHosts([
+    [
+      'host' => $elastic_host,
+      'port' => 9200,
+      'scheme' => 'http',
+      'user' => $elastic_username,
+      'pass' => $elastic_password
+    ]
+  ])
+  ->setRetries(2)
+  ->build();
 
 
 require __DIR__ . '/api.php';
 $api = new DrupalApi();
 
-$max_pages = 800;
+$max_pages = 80000;
 $page = 0;
 do {
   echo "Getting page: {$page} ";
   $data = $api->getProjects($page, $limit);
 
-  $batch = [];
+  $batch = ['body' => []];
+
   foreach ($data->list as $node) {
     echo ".";
     $obj = [
-      'objectID' => $node->nid,
       'title' => $node->title,
       'body' => strip_tags($node->body->value),
       'url' => $node->url,
@@ -96,11 +104,11 @@ do {
         $obj['compatibility'][] = $core;
       }
     }
-
-    $batch[] = $obj;
+    $batch['body'][] = ['index' => ['_index' => $elastic_index, '_type' => 'project', '_id' => $node->nid] ]; 
+    $batch['body'][] = $obj;
   }
 
-  $index->addObjects($batch);
+  $client->bulk($batch);
 
   echo "Done!\n";
 
