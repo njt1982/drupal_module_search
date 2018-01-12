@@ -64,9 +64,14 @@ class DrupalApi {
       $data = file_get_contents($cache_path);;
     }
     else {
-      $res = $this->client->request('GET', $url, $options);
-      $data = (string)$res->getBody();
-      file_put_contents($cache_path, $data);
+      try {
+        $res = $this->client->request('GET', $url, $options);
+        $data = (string)$res->getBody();
+        file_put_contents($cache_path, $data);
+      }
+      catch (GuzzleHttp\Exception\TransferException $e) {
+        echo "Guzzle Error: {$e->getMessage()}";
+      }
     }
 
     $this->cache[$cache_path] = $is_json ? json_decode($data) : $data;

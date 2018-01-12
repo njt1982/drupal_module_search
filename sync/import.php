@@ -22,7 +22,10 @@ $elastic_password = getenv('ELASTIC_PASSWORD');
 $elastic_index = getenv('ELASTIC_INDEX');
 
 $limit = getenv('limit') ?: 10;
-echo "Importing at {$limit} per page.\n";
+$page = 0;
+if (isset($argv[1])) { $page = intval($argv[1]); }
+
+echo "Importing from {$page} at {$limit} per page.\n";
 
 $client = Elasticsearch\ClientBuilder::create()
   ->setHosts([
@@ -42,7 +45,6 @@ require __DIR__ . '/api.php';
 $api = new DrupalApi();
 
 $max_pages = 80000;
-$page = 0;
 do {
   echo "Getting page: {$page} ";
   $data = $api->getProjects($page, $limit);
